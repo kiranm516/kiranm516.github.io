@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Guides &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Gradle &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code Tools" href="../tools/tools-index.html" />
-    <link rel="prev" title="Code Design" href="../code-design/code-design-index.html" /> 
+    <link rel="prev" title="Code Tools" href="../tools/tools-index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -93,22 +92,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Guides</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#aio">AIO</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#discrete-math">Discrete Math</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#web-development">Web Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/guides-index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#aio">AIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#discrete-math">Discrete Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/tools-index.html">Code Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/tools-index.html#code-review">Code Review</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../gradle/gradle-index.html">Gradle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gradle/gradle-index.html#quite-mode">Quite mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gradle/gradle-index.html#dependson">dependsOn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gradle/gradle-index.html#finalizedby">finalizedBy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gradle/gradle-index.html#mustrunafter">mustRunAfter</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gradle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quite-mode">Quite mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependson">dependsOn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finalizedby">finalizedBy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mustrunafter">mustRunAfter</a></li>
 </ul>
 </li>
 </ul>
@@ -157,13 +156,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Guides</li>
+      <li>Gradle</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/guides/guides-index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/gradle/gradle-index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -176,24 +175,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="guides">
-<h1>Guides<a class="headerlink" href="#guides" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="aio">
-<h2>AIO<a class="headerlink" href="#aio" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.google.co.in/about/careers/students/guide-to-technical-development.html">https://www.google.co.in/about/careers/students/guide-to-technical-development.html</a></p>
+  <div class="section" id="gradle">
+<h1>Gradle<a class="headerlink" href="#gradle" title="Permalink to this headline">¶</a></h1>
+<p>Notes based on Udacity Gradle course</p>
+<div class="section" id="quite-mode">
+<h2>Quite mode<a class="headerlink" href="#quite-mode" title="Permalink to this headline">¶</a></h2>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
+</pre></div>
 </div>
-<div class="section" id="discrete-math">
-<h2>Discrete Math<a class="headerlink" href="#discrete-math" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://condor.depaul.edu/sepp/DMwA4e.htm">http://condor.depaul.edu/sepp/DMwA4e.htm</a></p>
+<p>Runs gradle in quite mode so only error messages are shown</p>
 </div>
-<div class="section" id="security">
-<h2>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://stackoverflow.com/questions/1581610/how-can-i-store-my-users-passwords-safely/1581919#1581919">http://stackoverflow.com/questions/1581610/how-can-i-store-my-users-passwords-safely/1581919#1581919</a></p>
+<div class="section" id="dependson">
+<h2>dependsOn<a class="headerlink" href="#dependson" title="Permalink to this headline">¶</a></h2>
+<p>e.g.,</p>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Putting on Socks.&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">task</span> <span class="n">putOnShoes</span> <span class="p">{</span>
+    <span class="n">dependsOn</span> <span class="s2">&quot;putOnSocks&quot;</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Putting on Shoes.&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="section" id="web-development">
-<h2>Web Development<a class="headerlink" href="#web-development" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://softwareengineering.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before">http://softwareengineering.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before</a>
-<a class="reference external" href="http://www.gwtproject.org/">http://www.gwtproject.org/</a></p>
+</div>
+<div class="section" id="finalizedby">
+<h2>finalizedBy<a class="headerlink" href="#finalizedby" title="Permalink to this headline">¶</a></h2>
+<p>When run eatBreadkFast afterwards brushYourTeeth task is also run</p>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="p">{</span>
+    <span class="n">finalizedBy</span> <span class="s2">&quot;brushYourTeeth&quot;</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Eating breakfast&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">task</span> <span class="n">brushYourTeeth</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Brushing...&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mustrunafter">
+<h2>mustRunAfter<a class="headerlink" href="#mustrunafter" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -205,10 +234,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tools/tools-index.html" class="btn btn-neutral float-right" title="Code Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../code-design/code-design-index.html" class="btn btn-neutral" title="Code Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../tools/tools-index.html" class="btn btn-neutral" title="Code Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

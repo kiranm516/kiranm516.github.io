@@ -13,7 +13,7 @@ Checkstyle
 http://eclipse-cs.sourceforge.net/
 
 
-Sonar
+SonarQube
 
 Sonarlint
 https://www.sonarlint.org/eclipse/
@@ -22,5 +22,5 @@ https://www.sonarlint.org/eclipse/
 Code Review
 ===========
 
-- Phabrictor
 - Codebrag
+- Phabrictor
