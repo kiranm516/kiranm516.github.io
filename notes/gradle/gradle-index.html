@@ -104,10 +104,20 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Gradle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#quite-mode">Quite mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dependson">dependsOn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#finalizedby">finalizedBy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mustrunafter">mustRunAfter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-gradle">What is Gradle?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-gradle">Installing Gradle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basics-concepts">Basics Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-gradle">build.gradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quite-mode">Quite mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project">Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task">Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependson">dependsOn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalizedby">finalizedBy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mustrunafter">mustRunAfter</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -178,15 +188,45 @@
   <div class="section" id="gradle">
 <h1>Gradle<a class="headerlink" href="#gradle" title="Permalink to this headline">¶</a></h1>
 <p>Notes based on Udacity Gradle course</p>
+<div class="section" id="what-is-gradle">
+<h2>What is Gradle?<a class="headerlink" href="#what-is-gradle" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="installing-gradle">
+<h2>Installing Gradle<a class="headerlink" href="#installing-gradle" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basics-concepts">
+<h2>Basics Concepts<a class="headerlink" href="#basics-concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-gradle">
+<h3>build.gradle<a class="headerlink" href="#build-gradle" title="Permalink to this headline">¶</a></h3>
+<p><cite>build.gradle</cite> is the default build script to be used.
+For using another script by specifying <cite>-b</cite> flag with the build file name</p>
+</div>
 <div class="section" id="quite-mode">
-<h2>Quite mode<a class="headerlink" href="#quite-mode" title="Permalink to this headline">¶</a></h2>
+<h3>Quite mode<a class="headerlink" href="#quite-mode" title="Permalink to this headline">¶</a></h3>
 <div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
 </pre></div>
 </div>
 <p>Runs gradle in quite mode so only error messages are shown</p>
 </div>
+<div class="section" id="project">
+<h3>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<p>Every build script can be think of as for one project. It literaly contains the data for that projects like tasks</p>
+</div>
+</div>
+<div class="section" id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>Task is the central concept to gradle. A project build process have several tasks and it has several other properites</p>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">hello</span> <span class="p">{</span>
+    <span class="n">description</span> <span class="s2">&quot;Task description&quot;</span>
+    <span class="n">group</span> <span class="s2">&quot;Task group name&quot;</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Hello, Task!&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="section" id="dependson">
-<h2>dependsOn<a class="headerlink" href="#dependson" title="Permalink to this headline">¶</a></h2>
+<h3>dependsOn<a class="headerlink" href="#dependson" title="Permalink to this headline">¶</a></h3>
 <p>e.g.,</p>
 <div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="p">{</span>
     <span class="n">doLast</span> <span class="p">{</span>
@@ -204,7 +244,7 @@
 </div>
 </div>
 <div class="section" id="finalizedby">
-<h2>finalizedBy<a class="headerlink" href="#finalizedby" title="Permalink to this headline">¶</a></h2>
+<h3>finalizedBy<a class="headerlink" href="#finalizedby" title="Permalink to this headline">¶</a></h3>
 <p>When run eatBreadkFast afterwards brushYourTeeth task is also run</p>
 <div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="p">{</span>
     <span class="n">finalizedBy</span> <span class="s2">&quot;brushYourTeeth&quot;</span>
@@ -222,7 +262,8 @@
 </div>
 </div>
 <div class="section" id="mustrunafter">
-<h2>mustRunAfter<a class="headerlink" href="#mustrunafter" title="Permalink to this headline">¶</a></h2>
+<h3>mustRunAfter<a class="headerlink" href="#mustrunafter" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
