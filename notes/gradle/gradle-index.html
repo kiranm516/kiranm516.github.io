@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gradle &mdash; My Scribblings 0.1.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Code Tools" href="../tools/tools-index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My Scribblings
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../git/git-index.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-index.html#deleting-all-previous-commits-in-git-001">Deleting all previous commits in Git </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-index.html#rename-local-and-remote-branch-002">Rename local and remote branch </a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal"><span class="pre">[CD001]</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/guides-index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#aio">AIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#discrete-math">Discrete Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools-index.html">Code Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/tools-index.html#code-review">Code Review</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gradle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-gradle">What is Gradle?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-gradle">Installing Gradle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basics-concepts">Basics Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-gradle">build.gradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quite-mode">Quite mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project">Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#task">Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dependson">dependsOn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalizedby">finalizedBy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mustrunafter">mustRunAfter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My Scribblings</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Gradle</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/gradle/gradle-index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gradle">
+<h1>Gradle<a class="headerlink" href="#gradle" title="Permalink to this headline">¶</a></h1>
+<p>Notes based on Udacity Gradle course</p>
+<div class="section" id="what-is-gradle">
+<h2>What is Gradle?<a class="headerlink" href="#what-is-gradle" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="installing-gradle">
+<h2>Installing Gradle<a class="headerlink" href="#installing-gradle" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="basics-concepts">
+<h2>Basics Concepts<a class="headerlink" href="#basics-concepts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-gradle">
+<h3>build.gradle<a class="headerlink" href="#build-gradle" title="Permalink to this headline">¶</a></h3>
+<p><cite>build.gradle</cite> is the default build script to be used.
+For using another script by specifying <cite>-b</cite> flag with the build file name</p>
+</div>
+<div class="section" id="quite-mode">
+<h3>Quite mode<a class="headerlink" href="#quite-mode" title="Permalink to this headline">¶</a></h3>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
+</pre></div>
+</div>
+<p>Runs gradle in quite mode so only error messages are shown</p>
+</div>
+<div class="section" id="project">
+<h3>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<p>Every build script can be think of as for one project. It literaly contains the data for that projects like tasks</p>
+</div>
+</div>
+<div class="section" id="task">
+<h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
+<p>Task is the central concept to gradle. A project build process have several tasks and it has several other properites</p>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">hello</span> <span class="p">{</span>
+    <span class="n">description</span> <span class="s2">&quot;Task description&quot;</span>
+    <span class="n">group</span> <span class="s2">&quot;Task group name&quot;</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Hello, Task!&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="dependson">
+<h3>dependsOn<a class="headerlink" href="#dependson" title="Permalink to this headline">¶</a></h3>
+<p>e.g.,</p>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Putting on Socks.&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">task</span> <span class="n">putOnShoes</span> <span class="p">{</span>
+    <span class="n">dependsOn</span> <span class="s2">&quot;putOnSocks&quot;</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Putting on Shoes.&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finalizedby">
+<h3>finalizedBy<a class="headerlink" href="#finalizedby" title="Permalink to this headline">¶</a></h3>
+<p>When run eatBreadkFast afterwards brushYourTeeth task is also run</p>
+<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="p">{</span>
+    <span class="n">finalizedBy</span> <span class="s2">&quot;brushYourTeeth&quot;</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Eating breakfast&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">task</span> <span class="n">brushYourTeeth</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="p">{</span>
+        <span class="n">println</span> <span class="s2">&quot;Brushing...&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mustrunafter">
+<h3>mustRunAfter<a class="headerlink" href="#mustrunafter" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../tools/tools-index.html" class="btn btn-neutral" title="Code Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Kiran Marturu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          
+          SphinxRtdTheme.Navigation.enableSticky();
+          
+      });
+  </script> 
+
+</body>
+</html>

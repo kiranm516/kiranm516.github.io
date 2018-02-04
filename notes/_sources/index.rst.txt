@@ -8,3 +8,4 @@ My Scribblings's
    code-design/code-design-index.rst
    guides/guides-index.rst
    tools/tools-index.rst
+   gradle/gradle-index.rst
