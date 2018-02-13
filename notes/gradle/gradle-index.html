@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ASP.NET WebForms" href="../asp.net-webforms/index.html" />
     <link rel="prev" title="Code Tools" href="../tools/tools-index.html" /> 
 
   
@@ -89,7 +90,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/guides-index.html">Guides</a><ul>
@@ -113,11 +114,23 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#task">Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#list-all-tasks">List all tasks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dependson">dependsOn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#finalizedby">finalizedBy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mustrunafter">mustRunAfter</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../asp.net-webforms/index.html">ASP.NET WebForms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/index.html#best-modern-practices">Best/Modern Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../asp.net-webforms/index.html#turn-off-viewstate">Turn off ViewState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../asp.net-webforms/index.html#disable-on-page-directive">Disable on Page directive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/index.html#use-bundles">Use Bundles</a></li>
 </ul>
 </li>
 </ul>
@@ -193,17 +206,19 @@
 </div>
 <div class="section" id="installing-gradle">
 <h2>Installing Gradle<a class="headerlink" href="#installing-gradle" title="Permalink to this headline">¶</a></h2>
+<p>Get Gradle from <a class="reference external" href="https://gradle.org/install/">https://gradle.org/install/</a></p>
+<p>Extract to C:Gradlegradle-&lt;V&gt;.&lt;R&gt;</p>
 </div>
 <div class="section" id="basics-concepts">
 <h2>Basics Concepts<a class="headerlink" href="#basics-concepts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="build-gradle">
 <h3>build.gradle<a class="headerlink" href="#build-gradle" title="Permalink to this headline">¶</a></h3>
-<p><cite>build.gradle</cite> is the default build script to be used.
+<p><code class="docutils literal notranslate"><span class="pre">build.gradle</span></code> is the default build script to be used.
 For using another script by specifying <cite>-b</cite> flag with the build file name</p>
 </div>
 <div class="section" id="quite-mode">
 <h3>Quite mode<a class="headerlink" href="#quite-mode" title="Permalink to this headline">¶</a></h3>
-<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
 </pre></div>
 </div>
 <p>Runs gradle in quite mode so only error messages are shown</p>
@@ -216,7 +231,7 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 <div class="section" id="task">
 <h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
 <p>Task is the central concept to gradle. A project build process have several tasks and it has several other properites</p>
-<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">hello</span> <span class="p">{</span>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">hello</span> <span class="p">{</span>
     <span class="n">description</span> <span class="s2">&quot;Task description&quot;</span>
     <span class="n">group</span> <span class="s2">&quot;Task group name&quot;</span>
     <span class="n">doLast</span> <span class="p">{</span>
@@ -225,10 +240,16 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="section" id="list-all-tasks">
+<h3>List all tasks<a class="headerlink" href="#list-all-tasks" title="Permalink to this headline">¶</a></h3>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="n">tasks</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="dependson">
 <h3>dependsOn<a class="headerlink" href="#dependson" title="Permalink to this headline">¶</a></h3>
 <p>e.g.,</p>
-<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="p">{</span>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="p">{</span>
     <span class="n">doLast</span> <span class="p">{</span>
         <span class="n">println</span> <span class="s2">&quot;Putting on Socks.&quot;</span>
     <span class="p">}</span>
@@ -246,7 +267,7 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 <div class="section" id="finalizedby">
 <h3>finalizedBy<a class="headerlink" href="#finalizedby" title="Permalink to this headline">¶</a></h3>
 <p>When run eatBreadkFast afterwards brushYourTeeth task is also run</p>
-<div class="code groovy highlight-default"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="p">{</span>
+<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="p">{</span>
     <span class="n">finalizedBy</span> <span class="s2">&quot;brushYourTeeth&quot;</span>
     <span class="n">doLast</span> <span class="p">{</span>
         <span class="n">println</span> <span class="s2">&quot;Eating breakfast&quot;</span>
@@ -274,6 +295,8 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../asp.net-webforms/index.html" class="btn btn-neutral float-right" title="ASP.NET WebForms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../tools/tools-index.html" class="btn btn-neutral" title="Code Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -9,13 +9,16 @@ What is Gradle?
 
 Installing Gradle
 =================
+Get Gradle from https://gradle.org/install/
+
+Extract to C:\Gradle\gradle-<V>.<R>
 
 Basics Concepts
 ===============
 
 build.gradle
 ------------
-`build.gradle` is the default build script to be used.
+``build.gradle`` is the default build script to be used.
 For using another script by specifying `-b` flag with the build file name
 
 Quite mode
@@ -43,6 +46,14 @@ Task is the central concept to gradle. A project build process have several task
             println "Hello, Task!"
         }
     }
+
+List all tasks
+--------------
+
+.. code:: groovy
+
+    gradle tasks --all
+
 
 dependsOn
 ---------

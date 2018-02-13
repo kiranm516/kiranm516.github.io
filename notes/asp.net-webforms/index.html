@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Code Tools &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>ASP.NET WebForms &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Gradle" href="../gradle/gradle-index.html" />
-    <link rel="prev" title="Guides" href="../guides/guides-index.html" /> 
+    <link rel="prev" title="Gradle" href="../gradle/gradle-index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -100,8 +99,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#code-review">Code Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/tools-index.html">Code Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/tools-index.html#code-review">Code Review</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gradle/gradle-index.html">Gradle</a><ul>
@@ -122,15 +121,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../asp.net-webforms/index.html">ASP.NET WebForms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/index.html#best-modern-practices">Best/Modern Practices</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../asp.net-webforms/index.html#turn-off-viewstate">Turn off ViewState</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../asp.net-webforms/index.html#disable-on-page-directive">Disable on Page directive</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ASP.NET WebForms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#best-modern-practices">Best/Modern Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#turn-off-viewstate">Turn off ViewState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#disable-on-page-directive">Disable on Page directive</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/index.html#use-bundles">Use Bundles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-bundles">Use Bundles</a></li>
 </ul>
 </li>
 </ul>
@@ -179,13 +178,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Code Tools</li>
+      <li>ASP.NET WebForms</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/tools/tools-index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/asp.net-webforms/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -198,23 +197,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="code-tools">
-<h1>Code Tools<a class="headerlink" href="#code-tools" title="Permalink to this headline">¶</a></h1>
-<p>PMD Source Code Analyzer
-<a class="reference external" href="https://pmd.github.io/">https://pmd.github.io/</a></p>
-<p>SpotBugs
-<a class="reference external" href="https://spotbugs.github.io/">https://spotbugs.github.io/</a></p>
-<p>Checkstyle</p>
-<p><a class="reference external" href="http://eclipse-cs.sourceforge.net/">http://eclipse-cs.sourceforge.net/</a></p>
-<p>SonarQube</p>
-<p>Sonarlint
-<a class="reference external" href="https://www.sonarlint.org/eclipse/">https://www.sonarlint.org/eclipse/</a></p>
-<div class="section" id="code-review">
-<h2>Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="asp-net-webforms">
+<h1>ASP.NET WebForms<a class="headerlink" href="#asp-net-webforms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="best-modern-practices">
+<h2>Best/Modern Practices<a class="headerlink" href="#best-modern-practices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="turn-off-viewstate">
+<h3>Turn off ViewState<a class="headerlink" href="#turn-off-viewstate" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Codebrag</li>
-<li>Phabrictor</li>
+<li>Most controls do not require ViewState<ul>
+<li>New techniques allow for controls to manage data without it</li>
 </ul>
+</li>
+</ul>
+<div class="section" id="disable-on-page-directive">
+<h4>Disable on Page directive<a class="headerlink" href="#disable-on-page-directive" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;%&#64;</span> <span class="pre">Page</span> <span class="pre">EnableViewState=&quot;false&quot;</span> <span class="pre">%&gt;</span></code></p>
+<p>Disable in web.config</p>
+<dl class="docutils">
+<dt>&lt;system.web&gt;</dt>
+<dd>&lt;pages enableViewState=”false” /&gt;</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="use-bundles">
+<h2>Use Bundles<a class="headerlink" href="#use-bundles" title="Permalink to this headline">¶</a></h2>
+<p>Use bundles for configuring any javascript or css resources</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">App_Start/BundleConfig.cs</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/Bundle.config</span></code></li>
+</ul>
+<p>Take all your javascript, css and combine and minifies and serves as one file.
+Benefit is as HTTP has waterfall model where requests are come one by one so all in a single request can make it load all at once</p>
 </div>
 </div>
 
@@ -226,10 +240,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gradle/gradle-index.html" class="btn btn-neutral float-right" title="Gradle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../guides/guides-index.html" class="btn btn-neutral" title="Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../gradle/gradle-index.html" class="btn btn-neutral" title="Gradle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

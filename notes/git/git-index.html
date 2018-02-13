@@ -90,7 +90,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../guides/guides-index.html">Guides</a><ul>
@@ -114,11 +114,23 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gradle/gradle-index.html#task">Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/gradle-index.html#list-all-tasks">List all tasks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gradle/gradle-index.html#dependson">dependsOn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gradle/gradle-index.html#finalizedby">finalizedBy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gradle/gradle-index.html#mustrunafter">mustRunAfter</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../asp.net-webforms/index.html">ASP.NET WebForms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/index.html#best-modern-practices">Best/Modern Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../asp.net-webforms/index.html#turn-off-viewstate">Turn off ViewState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../asp.net-webforms/index.html#disable-on-page-directive">Disable on Page directive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/index.html#use-bundles">Use Bundles</a></li>
 </ul>
 </li>
 </ul>
@@ -191,7 +203,7 @@
 <div class="section" id="deleting-all-previous-commits-in-git-001">
 <h2>Deleting all previous commits in Git <a class="footnote-reference" href="#id3" id="id1">[001]</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
 <p>Deleting the .git folder may cause problems in your git repository. If you want to delete all your commit history but keep the code in its current state, it is very safe to do it as in the following:</p>
-<div class="code batch highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">latest_branch</span>
+<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">latest_branch</span>
 <span class="c1"># Add all the files</span>
 <span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span>
 <span class="n">Commit</span> <span class="n">the</span> <span class="n">changes</span>
@@ -208,7 +220,7 @@
 </div>
 <div class="section" id="rename-local-and-remote-branch-002">
 <h2>Rename local and remote branch <a class="footnote-reference" href="#id4" id="id2">[002]</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
-<div class="code batch highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Rename the branch locally</span>
+<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the branch locally</span>
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">old</span><span class="o">-</span><span class="n">name</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
 
 <span class="c1"># Delete the old-name remote branch and push the new-name local branch</span>
