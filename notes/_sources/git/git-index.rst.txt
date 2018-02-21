@@ -37,6 +37,26 @@ Rename local and remote branch [002]_
   git checkout new-name
   git push origin -u new-name
 
+Set proxy in Git [003]_
+=======================
+
+``git config --global http.proxy http://proxyuser:proxypwd@proxy.server.com:8080``
+
+
+- change proxyuser to your proxy user
+- change proxypwd to your proxy password
+- change proxy.server.com to the URL of your proxy server
+- change 8080 to the proxy port configured on your proxy server
+
+If you decide at any time to reset this proxy and work without proxy:
+
+Command to use:
+``git config --global --unset http.proxy``
+
+Finally, to check the currently set proxy:
+``git config --global --get http.proxy``
+
 
 .. [001] https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github
 .. [002] https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git
+.. [003] https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server

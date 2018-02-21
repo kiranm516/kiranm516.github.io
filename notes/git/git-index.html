@@ -87,6 +87,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deleting-all-previous-commits-in-git-001">Deleting all previous commits in Git </a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rename-local-and-remote-branch-002">Rename local and remote branch </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-proxy-in-git-003">Set proxy in Git </a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
@@ -201,7 +202,7 @@
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="deleting-all-previous-commits-in-git-001">
-<h2>Deleting all previous commits in Git <a class="footnote-reference" href="#id3" id="id1">[001]</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
+<h2>Deleting all previous commits in Git <a class="footnote-reference" href="#id4" id="id1">[001]</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
 <p>Deleting the .git folder may cause problems in your git repository. If you want to delete all your commit history but keep the code in its current state, it is very safe to do it as in the following:</p>
 <div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">latest_branch</span>
 <span class="c1"># Add all the files</span>
@@ -219,7 +220,7 @@
 </div>
 </div>
 <div class="section" id="rename-local-and-remote-branch-002">
-<h2>Rename local and remote branch <a class="footnote-reference" href="#id4" id="id2">[002]</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
+<h2>Rename local and remote branch <a class="footnote-reference" href="#id5" id="id2">[002]</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
 <div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the branch locally</span>
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">old</span><span class="o">-</span><span class="n">name</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
 
@@ -231,16 +232,37 @@
 <span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">-</span><span class="n">u</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
 </pre></div>
 </div>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
+</div>
+<div class="section" id="set-proxy-in-git-003">
+<h2>Set proxy in Git <a class="footnote-reference" href="#id6" id="id3">[003]</a><a class="headerlink" href="#set-proxy-in-git-003" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">http.proxy</span> <span class="pre">http://proxyuser:proxypwd&#64;proxy.server.com:8080</span></code></p>
+<ul class="simple">
+<li>change proxyuser to your proxy user</li>
+<li>change proxypwd to your proxy password</li>
+<li>change proxy.server.com to the URL of your proxy server</li>
+<li>change 8080 to the proxy port configured on your proxy server</li>
+</ul>
+<p>If you decide at any time to reset this proxy and work without proxy:</p>
+<p>Command to use:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">--unset</span> <span class="pre">http.proxy</span></code></p>
+<p>Finally, to check the currently set proxy:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">--get</span> <span class="pre">http.proxy</span></code></p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[002]</a></td><td><a class="reference external" href="https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git">https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[003]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server</a></td></tr>
 </tbody>
 </table>
 </div>
