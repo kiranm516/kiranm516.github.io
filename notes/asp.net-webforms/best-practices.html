@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ASP.NET WebForms &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Best Practices &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Best Practices" href="best-practices.html" />
-    <link rel="prev" title="My Scribblings’s" href="../index.html" /> 
+    <link rel="next" title="Code Blocks" href="code-blocks.html" />
+    <link rel="prev" title="ASP.NET WebForms" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,10 +84,10 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ASP.NET WebForms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="best-practices.html">Best Practices</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="best-practices.html#turn-off-viewstate">Turn off ViewState</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="best-practices.html#disable-on-page-directive">Disable on Page directive</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">ASP.NET WebForms</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#turn-off-viewstate">Turn off ViewState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#disable-on-page-directive">Disable on Page directive</a></li>
 </ul>
 </li>
 </ul>
@@ -186,13 +186,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>ASP.NET WebForms</li>
+          <li><a href="index.html">ASP.NET WebForms</a> &raquo;</li>
+        
+      <li>Best Practices</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/asp.net-webforms/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/asp.net-webforms/best-practices.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -205,13 +207,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="asp-net-webforms">
-<h1>ASP.NET WebForms<a class="headerlink" href="#asp-net-webforms" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="best-practices.html">Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-blocks.html">Code Blocks</a></li>
+  <div class="section" id="best-practices">
+<h1>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="turn-off-viewstate">
+<h2>Turn off ViewState<a class="headerlink" href="#turn-off-viewstate" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Most controls do not require ViewState<ul>
+<li>New techniques allow for controls to manage data without it</li>
 </ul>
+</li>
+</ul>
+<div class="section" id="disable-on-page-directive">
+<h3>Disable on Page directive<a class="headerlink" href="#disable-on-page-directive" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;%&#64;</span> <span class="pre">Page</span> <span class="pre">EnableViewState=&quot;false&quot;</span> <span class="pre">%&gt;</span></code></p>
+<p>Disable in web.config</p>
+<dl class="docutils">
+<dt>&lt;system.web&gt;</dt>
+<dd>&lt;pages enableViewState=”false” /&gt;</dd>
+</dl>
+<div class="section" id="use-bundles">
+<h4>Use Bundles<a class="headerlink" href="#use-bundles" title="Permalink to this headline">¶</a></h4>
+<p>Use bundles for configuring any javascript or css resources</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">App_Start/BundleConfig.cs</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">/Bundle.config</span></code></li>
+</ul>
+<p>Take all your javascript, css and combine and minifies and serves as one file.
+Benefit is as HTTP has waterfall model where requests are come one by one so all in a single request can make it load all at once</p>
+</div>
+<div class="section" id="encoding-input-and-output">
+<h4>Encoding Input and Output<a class="headerlink" href="#encoding-input-and-output" title="Permalink to this headline">¶</a></h4>
+<p>Any user input need to be encoded before using it in SQL query or storing into database, to avoid cross-site scripting.</p>
+<p>example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;&lt;%</span><span class="p">:</span> <span class="n">userInput</span> <span class="o">%&gt;&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+<span class="ow">or</span>
+<span class="o">&lt;</span><span class="n">span</span><span class="o">&gt;</span><span class="nd">@userInput</span><span class="o">&lt;/</span><span class="n">span</span><span class="o">&gt;</span>
+
+<span class="c1"># Encode in code behind</span>
+<span class="n">var</span> <span class="n">encodedInput</span> <span class="o">=</span> <span class="n">Server</span><span class="o">.</span><span class="n">HtmlEncode</span><span class="p">(</span><span class="n">userInput</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -223,10 +260,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="best-practices.html" class="btn btn-neutral float-right" title="Best Practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="code-blocks.html" class="btn btn-neutral float-right" title="Code Blocks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="My Scribblings’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="ASP.NET WebForms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
