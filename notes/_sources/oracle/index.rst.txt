@@ -2,17 +2,8 @@
 Oracle
 ======
 
-Run host (windows) commands
+.. toctree::
+   :maxdepth: 1
 
-host <host-command>
-
-e.g., host cls
-
-
-CREATE USER kiran IDENTIFIED BY passme
-
-ALTER USER kiran IDENTIFIED BY passme
-
-GRANT CONNECT TO kiran;
-
-GRANT ALL PRIVILEGES TO kiran IDENTIFIED BY passme;
+   dba.rst
+   sql.rst

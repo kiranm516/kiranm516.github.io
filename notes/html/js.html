@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Code Design &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Javascript &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Gradle" href="../gradle/gradle-index.html" />
-    <link rel="prev" title="Code Blocks" href="../asp.net-webforms/code-blocks.html" /> 
+    <link rel="next" title="Oracle" href="../oracle/index.html" />
+    <link rel="prev" title="HTML" href="html.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,8 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/code-blocks.html">Code Blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gradle/gradle-index.html">Gradle</a><ul>
@@ -130,14 +130,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML CSS &amp; Javascript</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../html/html.html">HTML</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../html/html.html#special-characters-codes">Special characters codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../html/html.html#submitting-readonly-fields">Submitting readonly fields</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">HTML CSS &amp; Javascript</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="html.html">HTML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="html.html#special-characters-codes">Special characters codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html#submitting-readonly-fields">Submitting readonly fields</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../html/js.html">Javascript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../html/js.html#jquery-click-not-working">jQuery click not working</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jquery-click-not-working">jQuery click not working</a></li>
 </ul>
 </li>
 </ul>
@@ -208,13 +208,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Code Design</li>
+          <li><a href="index.html">HTML CSS &amp; Javascript</a> &raquo;</li>
+        
+      <li>Javascript</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/code-design/code-design-index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/html/js.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -227,17 +229,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="code-design">
-<h1>Code Design<a class="headerlink" href="#code-design" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exception-vs-boolean-cd001">
-<h2>Exception vs Boolean <a class="reference internal" href="#cd001" id="id1">[CD001]</a><a class="headerlink" href="#exception-vs-boolean-cd001" title="Permalink to this headline">¶</a></h2>
-<p>Exceptions are generally the way to go for things where failure is not expected as an option. Boolean return values are the way to go for things where failure might be an expected result sometimes.</p>
-<table class="docutils citation" frame="void" id="cd001" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[CD001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw">https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw</a></td></tr>
-</tbody>
-</table>
+  <div class="section" id="javascript">
+<h1>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="jquery-click-not-working">
+<h2>jQuery click not working<a class="headerlink" href="#jquery-click-not-working" title="Permalink to this headline">¶</a></h2>
+<p>Example</p>
+<div class="code javascript highlight-default notranslate"><div class="highlight"><pre><span></span>$(document).ready(function() {
+    // This WILL work because we are listening on the &#39;document&#39;,
+    // for a click on an element with an ID of #test-element
+    $(document).on(&quot;click&quot;,&quot;#test-element&quot;,function() {
+        alert(&quot;click bound to document listening for #test-element&quot;);
+    });
+
+    // This will NOT work because there is no &#39;#test-element&#39; ... yet
+    $(&quot;#test-element&quot;).on(&quot;click&quot;,function() {
+        alert(&quot;click bound directly to #test-element&quot;);
+    });
+
+    // Create the dynamic element &#39;#test-element&#39;
+    $(&#39;body&#39;).append(&#39;&lt;div id=&quot;test-element&quot;&gt;Click mee&lt;/div&gt;&#39;);
+});
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -249,10 +262,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gradle/gradle-index.html" class="btn btn-neutral float-right" title="Gradle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../oracle/index.html" class="btn btn-neutral float-right" title="Oracle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../asp.net-webforms/code-blocks.html" class="btn btn-neutral" title="Code Blocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="html.html" class="btn btn-neutral" title="HTML" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

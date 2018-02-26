@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Code Design &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>PHP &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Gradle" href="../gradle/gradle-index.html" />
-    <link rel="prev" title="Code Blocks" href="../asp.net-webforms/code-blocks.html" /> 
+    <link rel="prev" title="Code Tools" href="../tools/tools-index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,8 +94,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/code-blocks.html">Code Blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gradle/gradle-index.html">Gradle</a><ul>
@@ -154,12 +153,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../tools/tools-index.html#code-review">Code Review</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../php/index.html">PHP</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../php/index.html#check-if-array-is-empty">Check if array is empty</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../php/index.html#session-handling-in-php">Session Handling in PHP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../php/index.html#session">Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../php/index.html#get-the-class-name">Get the class name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../php/index.html#install-specific-version-of-package-in-composer">Install specific version of package in Composer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">PHP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#check-if-array-is-empty">Check if array is empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session-handling-in-php">Session Handling in PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-class-name">Get the class name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-specific-version-of-package-in-composer">Install specific version of package in Composer</a></li>
 </ul>
 </li>
 </ul>
@@ -208,13 +207,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Code Design</li>
+      <li>PHP</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/code-design/code-design-index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/php/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -227,17 +226,67 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="code-design">
-<h1>Code Design<a class="headerlink" href="#code-design" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exception-vs-boolean-cd001">
-<h2>Exception vs Boolean <a class="reference internal" href="#cd001" id="id1">[CD001]</a><a class="headerlink" href="#exception-vs-boolean-cd001" title="Permalink to this headline">¶</a></h2>
-<p>Exceptions are generally the way to go for things where failure is not expected as an option. Boolean return values are the way to go for things where failure might be an expected result sometimes.</p>
-<table class="docutils citation" frame="void" id="cd001" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[CD001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw">https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw</a></td></tr>
-</tbody>
-</table>
+  <div class="section" id="php">
+<h1>PHP<a class="headerlink" href="#php" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="check-if-array-is-empty">
+<h2>Check if array is empty<a class="headerlink" href="#check-if-array-is-empty" title="Permalink to this headline">¶</a></h2>
+<p>If you just need to check if there are ANY elements in the array</p>
+<dl class="docutils">
+<dt>if (empty($playerlist)) {</dt>
+<dd>// list is empty.</dd>
+</dl>
+<p>}
+If you need to clean out empty values before checking (generally done to prevent explodeing weird strings):</p>
+<dl class="docutils">
+<dt>foreach ($playerlist as $key =&gt; $value) {</dt>
+<dd><dl class="first docutils">
+<dt>if (empty($value)) {</dt>
+<dd>unset($playerlist[$key]);</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>}
+if (empty($playerlist)) {</p>
+<blockquote>
+<div>//empty array</div></blockquote>
+<p>}</p>
+</div>
+<div class="section" id="session-handling-in-php">
+<h2>Session Handling in PHP<a class="headerlink" href="#session-handling-in-php" title="Permalink to this headline">¶</a></h2>
+<p>To use session:
+- Start a session via session_start(). The session_start() starts a new session or resume the existing session.
+- The superglobal associative array $_SESSION maintain data of the session.
+- You can check if a key-value pair exists via isset($_SESSION[‘key’]).
+- You can set a key-value pair for this session via $_SESSION[‘key’] = value.
+- You can retrieve value of a particular key via $_SESSION[‘key’].
+- You can remove a key-value pair via unset($_SESSION[‘key’]).
+- You can use function session_id() to retrieve the session ID.
+- To terminate the session explicitly, use session_write_close().</p>
+<p>The procedure is:
+1. Authenticate the user’s credential.
+2. Create a new session via session_start(), and place some tokens inside the session, e.g. $_SESSION[‘isLogin’] = TRUE.
+3. On all the other pages, resume the session ALSO via session_start(), and check if $_SESSION[‘isLogin’] is there, which indicates a resumed session rather than a new session.</p>
+</div>
+<div class="section" id="session">
+<h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
+<p>You need make sure to start the session at the top of every PHP file where you want to use the $_SESSION superglobal. Like this:</p>
+<dl class="docutils">
+<dt>&lt;?php</dt>
+<dd>session_start();
+echo $_SESSION[‘youritem’];</dd>
+</dl>
+<p>?&gt;</p>
+</div>
+<div class="section" id="get-the-class-name">
+<h2>Get the class name<a class="headerlink" href="#get-the-class-name" title="Permalink to this headline">¶</a></h2>
+<p>static::class</p>
+</div>
+<div class="section" id="install-specific-version-of-package-in-composer">
+<h2>Install specific version of package in Composer<a class="headerlink" href="#install-specific-version-of-package-in-composer" title="Permalink to this headline">¶</a></h2>
+<p>composer require vendor/package:version</p>
+<p>for example:</p>
+<p>composer require refinery29/test-util:0.10.2</p>
 </div>
 </div>
 
@@ -249,10 +298,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gradle/gradle-index.html" class="btn btn-neutral float-right" title="Gradle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../asp.net-webforms/code-blocks.html" class="btn btn-neutral" title="Code Blocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../tools/tools-index.html" class="btn btn-neutral" title="Code Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

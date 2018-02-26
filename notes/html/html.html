@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Code Design &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>HTML &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Gradle" href="../gradle/gradle-index.html" />
-    <link rel="prev" title="Code Blocks" href="../asp.net-webforms/code-blocks.html" /> 
+    <link rel="next" title="Javascript" href="js.html" />
+    <link rel="prev" title="HTML CSS &amp; Javascript" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,8 +95,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/code-blocks.html">Code Blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-design/code-design-index.html">Code Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gradle/gradle-index.html">Gradle</a><ul>
@@ -130,14 +130,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML CSS &amp; Javascript</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../html/html.html">HTML</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../html/html.html#special-characters-codes">Special characters codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../html/html.html#submitting-readonly-fields">Submitting readonly fields</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">HTML CSS &amp; Javascript</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HTML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#special-characters-codes">Special characters codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-readonly-fields">Submitting readonly fields</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../html/js.html">Javascript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../html/js.html#jquery-click-not-working">jQuery click not working</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js.html">Javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="js.html#jquery-click-not-working">jQuery click not working</a></li>
 </ul>
 </li>
 </ul>
@@ -208,13 +208,15 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Code Design</li>
+          <li><a href="index.html">HTML CSS &amp; Javascript</a> &raquo;</li>
+        
+      <li>HTML</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/code-design/code-design-index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/html/html.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -227,17 +229,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="code-design">
-<h1>Code Design<a class="headerlink" href="#code-design" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exception-vs-boolean-cd001">
-<h2>Exception vs Boolean <a class="reference internal" href="#cd001" id="id1">[CD001]</a><a class="headerlink" href="#exception-vs-boolean-cd001" title="Permalink to this headline">¶</a></h2>
-<p>Exceptions are generally the way to go for things where failure is not expected as an option. Boolean return values are the way to go for things where failure might be an expected result sometimes.</p>
-<table class="docutils citation" frame="void" id="cd001" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
+  <div class="section" id="html">
+<h1>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="special-characters-codes">
+<h2>Special characters codes<a class="headerlink" href="#special-characters-codes" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[CD001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw">https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw</a></td></tr>
+<tr class="row-odd"><td><strong>Character</strong></td>
+<td><strong>Code</strong></td>
+</tr>
+<tr class="row-even"><td>&amp;</td>
+<td><code class="docutils literal notranslate"><span class="pre">&amp;amp;</span></code></td>
+</tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="submitting-readonly-fields">
+<h2>Submitting readonly fields<a class="headerlink" href="#submitting-readonly-fields" title="Permalink to this headline">¶</a></h2>
+<p>Adding a hidden field with the same name will sends the data when the form is submitted.</p>
+<div class="code html highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_name&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;blablabla&quot;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_name&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;blablabla&quot;</span> <span class="n">disabled</span><span class="o">=</span><span class="s2">&quot;disabled&quot;</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -249,10 +266,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gradle/gradle-index.html" class="btn btn-neutral float-right" title="Gradle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="js.html" class="btn btn-neutral float-right" title="Javascript" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../asp.net-webforms/code-blocks.html" class="btn btn-neutral" title="Code Blocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="HTML CSS &amp; Javascript" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HTML &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>HTML CSS &amp; Javascript &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Oracle" href="../oracle/index.html" />
+    <link rel="next" title="HTML" href="html.html" />
     <link rel="prev" title="Guides" href="../guides/guides-index.html" /> 
 
   
@@ -130,14 +130,36 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">HTML</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#special-characters-codes">Special characters codes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submitting-readonly-fields">Submitting readonly fields</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">HTML CSS &amp; Javascript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="html.html">HTML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="html.html#special-characters-codes">Special characters codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="html.html#submitting-readonly-fields">Submitting readonly fields</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js.html">Javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="js.html#jquery-click-not-working">jQuery click not working</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/sql.html">SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/sql.html#sql-to-update-a-column-from-another-table">SQL to update a column from another table</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tools/tools-index.html">Code Tools</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tools/tools-index.html#code-review">Code Review</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../php/index.html">PHP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../php/index.html#check-if-array-is-empty">Check if array is empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../php/index.html#session-handling-in-php">Session Handling in PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../php/index.html#session">Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../php/index.html#get-the-class-name">Get the class name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../php/index.html#install-specific-version-of-package-in-composer">Install specific version of package in Composer</a></li>
 </ul>
 </li>
 </ul>
@@ -186,7 +208,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>HTML</li>
+      <li>HTML CSS &amp; Javascript</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,32 +227,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="html">
-<h1>HTML<a class="headerlink" href="#html" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="special-characters-codes">
-<h2>Special characters codes<a class="headerlink" href="#special-characters-codes" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Character</strong></td>
-<td><strong>Code</strong></td>
-</tr>
-<tr class="row-even"><td>&amp;</td>
-<td><code class="docutils literal notranslate"><span class="pre">&amp;amp;</span></code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="submitting-readonly-fields">
-<h2>Submitting readonly fields<a class="headerlink" href="#submitting-readonly-fields" title="Permalink to this headline">¶</a></h2>
-<p>Adding a hidden field with the same name will sends the data when the form is submitted.</p>
-<div class="code html highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;hidden&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_name&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;blablabla&quot;</span> <span class="o">/&gt;</span>
-<span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;my_name&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;blablabla&quot;</span> <span class="n">disabled</span><span class="o">=</span><span class="s2">&quot;disabled&quot;</span> <span class="o">/&gt;</span>
-</pre></div>
-</div>
+  <div class="section" id="html-css-javascript">
+<h1>HTML CSS &amp; Javascript<a class="headerlink" href="#html-css-javascript" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="html.html">HTML</a></li>
+<li class="toctree-l1"><a class="reference internal" href="js.html">Javascript</a></li>
+</ul>
 </div>
 </div>
 
@@ -242,7 +245,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../oracle/index.html" class="btn btn-neutral float-right" title="Oracle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="html.html" class="btn btn-neutral float-right" title="HTML" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../guides/guides-index.html" class="btn btn-neutral" title="Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

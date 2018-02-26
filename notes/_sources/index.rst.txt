@@ -12,3 +12,4 @@ My Scribblings's
    html/index.rst
    oracle/index.rst
    tools/tools-index.rst
+   php/index.rst
