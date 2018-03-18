@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Javascript &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Docker &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Oracle" href="../oracle/index.html" />
-    <link rel="prev" title="HTML" href="html.html" /> 
+    <link rel="next" title="Gradle" href="../gradle/gradle-index.html" />
+    <link rel="prev" title="Code Design" href="../code-design/code-design-index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -99,11 +99,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../code-design/code-design-index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#space-usage-001">Space Usage </a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#save-docker-image-002">Save docker image </a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#change-vhd-location-003">Change VHD location </a></li>
-<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#check-these-links">Check these links</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#space-usage-001">Space Usage </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-docker-image-002">Save docker image </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-vhd-location-003">Change VHD location </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-these-links">Check these links</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gradle/gradle-index.html">Gradle</a><ul>
@@ -137,14 +137,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../guides/guides-index.html#web-development">Web Development</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">HTML CSS &amp; Javascript</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="html.html">HTML</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="html.html#special-characters-codes">Special characters codes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="html.html#submitting-readonly-fields">Submitting readonly fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML CSS &amp; Javascript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../html/html.html">HTML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../html/html.html#special-characters-codes">Special characters codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../html/html.html#submitting-readonly-fields">Submitting readonly fields</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Javascript</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#jquery-click-not-working">jQuery click not working</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../html/js.html">Javascript</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../html/js.html#jquery-click-not-working">jQuery click not working</a></li>
 </ul>
 </li>
 </ul>
@@ -215,15 +215,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">HTML CSS &amp; Javascript</a> &raquo;</li>
-        
-      <li>Javascript</li>
+      <li>Docker</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/html/js.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/docker/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -236,28 +234,55 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="javascript">
-<h1>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="jquery-click-not-working">
-<h2>jQuery click not working<a class="headerlink" href="#jquery-click-not-working" title="Permalink to this headline">¶</a></h2>
-<p>Example</p>
-<div class="code javascript highlight-default notranslate"><div class="highlight"><pre><span></span>$(document).ready(function() {
-    // This WILL work because we are listening on the &#39;document&#39;,
-    // for a click on an element with an ID of #test-element
-    $(document).on(&quot;click&quot;,&quot;#test-element&quot;,function() {
-        alert(&quot;click bound to document listening for #test-element&quot;);
-    });
-
-    // This will NOT work because there is no &#39;#test-element&#39; ... yet
-    $(&quot;#test-element&quot;).on(&quot;click&quot;,function() {
-        alert(&quot;click bound directly to #test-element&quot;);
-    });
-
-    // Create the dynamic element &#39;#test-element&#39;
-    $(&#39;body&#39;).append(&#39;&lt;div id=&quot;test-element&quot;&gt;Click mee&lt;/div&gt;&#39;);
-});
+  <div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="space-usage-001">
+<h2>Space Usage <a class="footnote-reference" href="#id4" id="id1">[001]</a><a class="headerlink" href="#space-usage-001" title="Permalink to this headline">¶</a></h2>
+<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">system</span> <span class="n">df</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="save-docker-image-002">
+<h2>Save docker image <a class="footnote-reference" href="#id5" id="id2">[002]</a><a class="headerlink" href="#save-docker-image-002" title="Permalink to this headline">¶</a></h2>
+<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># pull the image</span>
+<span class="n">docker</span> <span class="n">pull</span> <span class="n">ubuntu</span>
+
+<span class="c1"># save the image to a file</span>
+<span class="n">docker</span> <span class="n">save</span> <span class="o">-</span><span class="n">o</span> <span class="n">ubuntu_image</span><span class="o">.</span><span class="n">docker</span> <span class="n">ubuntu</span>
+
+<span class="c1"># load the image from file</span>
+<span class="n">docker</span> <span class="n">load</span> <span class="n">ubuntu_image</span><span class="o">.</span><span class="n">docker</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-vhd-location-003">
+<h2>Change VHD location <a class="footnote-reference" href="#id6" id="id3">[003]</a><a class="headerlink" href="#change-vhd-location-003" title="Permalink to this headline">¶</a></h2>
+<p>Docker | Settings | Advanced | Change VHD Location</p>
+<p>Note: The selected directory should be empty. Docker will move the image</p>
+</div>
+<div class="section" id="check-these-links">
+<h2>Check these links<a class="headerlink" href="#check-these-links" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes">https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes</a>
+<a class="reference external" href="https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker">https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker</a>
+<a class="reference external" href="https://store.docker.com/profiles/kiranm516/content/sub-e2395a92-3d01-49bd-b79d-7ec6713c0113">https://store.docker.com/profiles/kiranm516/content/sub-e2395a92-3d01-49bd-b79d-7ec6713c0113</a></p>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/26753087/docker-how-to-analyze-a-containers-disk-usage">https://stackoverflow.com/questions/26753087/docker-how-to-analyze-a-containers-disk-usage</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[002]</a></td><td><a class="reference external" href="https://serverfault.com/questions/701248/downloading-docker-image-for-transfer-to-non-internet-connected-machine">https://serverfault.com/questions/701248/downloading-docker-image-for-transfer-to-non-internet-connected-machine</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id6" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[003]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/42369522/docker-wont-change-vhd-location?rq=1">https://stackoverflow.com/questions/42369522/docker-wont-change-vhd-location?rq=1</a></td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -269,10 +294,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../oracle/index.html" class="btn btn-neutral float-right" title="Oracle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gradle/gradle-index.html" class="btn btn-neutral float-right" title="Gradle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="html.html" class="btn btn-neutral" title="HTML" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../code-design/code-design-index.html" class="btn btn-neutral" title="Code Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

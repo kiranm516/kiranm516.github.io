@@ -6,6 +6,7 @@ My Scribblings's
 
    asp.net-webforms/index.rst
    code-design/code-design-index.rst
+   docker/index.rst
    gradle/gradle-index.rst
    git/git-index.rst
    guides/guides-index.rst
