@@ -172,54 +172,38 @@
 <li class="toctree-l2"><a class="reference internal" href="#check-if-array-is-empty">Check if array is empty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#session-handling-in-php">Session Handling in PHP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#session">Session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#get-the-class-name">Get the class name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-specific-version-of-package-in-composer">Install specific version of package in Composer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#php-short-forms">PHP Short Forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alternative-syntax-for-control-structures">Alternative syntax for control structures</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#echo">Echo</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#if">IF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if-else-if">IF &amp; ELSE IF</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#for-each">For each</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#string-functions">String Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#checking-variables">Checking Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#type-casting-and-conversion">Type Casting and Conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#php-design">PHP Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#layout-page">Layout Page</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#page-itself">1. page itself.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#template-php-which-is-your-main-site-template">2. template.php which is your main site template,</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#php-design">PHP Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#layout-page">Layout Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why">Why?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#page-itself">1. Page Itself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#template-php-which-is-your-main-site-template">2. template.php which is your main site template</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#and-finally-links-tpl-php-is-the-actual-page-template">3. and finally links.tpl.php is the actual page template:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#php-notes">PHP Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#redirect-to-another-page">Redirect to another page</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#check-query-parameters">Check query parameters</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#passing-php-form-validate-error-message-back-to-submit-form">Passing php form validate error message back to submit form</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#session-way">Session way</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-way">POST way</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#note">Note</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">String Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Checking Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Type Casting and Conversion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">PHP Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Layout Page</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id6">1. page itself.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">2. template.php which is your main site template,</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">3. and finally links.tpl.php is the actual page template:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#redirect-to-another-page">Redirect to another page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#check-query-parameters">Check query parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Session Handling in PHP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Session</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">PHP Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Redirect to another page</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Check query parameters</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">Session Handling in PHP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id13">Session</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">Get the class name</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-the-class-name">Get the class name</a></li>
 </ul>
 </li>
 </ul>
@@ -298,37 +282,20 @@
 </pre></div>
 </div>
 <p>If you need to clean out empty values before checking (generally done to prevent explodeing weird strings):</p>
-<dl class="docutils">
-<dt>..code :: php</dt>
-<dd><dl class="first docutils">
-<dt>foreach ($playerlist as $key =&gt; $value) {</dt>
-<dd><dl class="first docutils">
-<dt>if (empty($value)) {</dt>
-<dd>unset($playerlist[$key]);</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
-<p>}</p>
-<dl class="docutils">
-<dt>if (empty($playerlist)) {</dt>
-<dd>//empty array</dd>
-</dl>
-<p class="last">}</p>
-</dd>
-</dl>
 </div>
 <div class="section" id="session-handling-in-php">
 <h2>Session Handling in PHP<a class="headerlink" href="#session-handling-in-php" title="Permalink to this headline">¶</a></h2>
-<p>To use session:
-- Start a session via session_start(). The session_start() starts a new session or resume the existing session.
-- The superglobal associative array $_SESSION maintain data of the session.
-- You can check if a key-value pair exists via isset($_SESSION[‘key’]).
-- You can set a key-value pair for this session via $_SESSION[‘key’] = value.
-- You can retrieve value of a particular key via $_SESSION[‘key’].
-- You can remove a key-value pair via unset($_SESSION[‘key’]).
-- You can use function session_id() to retrieve the session ID.
-- To terminate the session explicitly, use session_write_close().</p>
+<p>To use session:</p>
+<ul class="simple">
+<li>Start a session via session_start(). The session_start() starts a new session or resume the existing session.</li>
+<li>The superglobal associative array $_SESSION maintain data of the session.</li>
+<li>You can check if a key-value pair exists via isset($_SESSION[‘key’]).</li>
+<li>You can set a key-value pair for this session via $_SESSION[‘key’] = value.</li>
+<li>You can retrieve value of a particular key via $_SESSION[‘key’].</li>
+<li>You can remove a key-value pair via unset($_SESSION[‘key’]).</li>
+<li>You can use function session_id() to retrieve the session ID.</li>
+<li>To terminate the session explicitly, use session_write_close().</li>
+</ul>
 <p>The procedure is:
 1. Authenticate the user’s credential.
 2. Create a new session via session_start(), and place some tokens inside the session, e.g. $_SESSION[‘isLogin’] = TRUE.
@@ -337,16 +304,12 @@
 <div class="section" id="session">
 <h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
 <p>You need make sure to start the session at the top of every PHP file where you want to use the $_SESSION superglobal. Like this:</p>
-<dl class="docutils">
-<dt>&lt;?php</dt>
-<dd>session_start();
-echo $_SESSION[‘youritem’];</dd>
-</dl>
-<p>?&gt;</p>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
+  session_start();
+  echo $_SESSION[&#39;youritem&#39;];
+?&gt;
+</pre></div>
 </div>
-<div class="section" id="get-the-class-name">
-<h2>Get the class name<a class="headerlink" href="#get-the-class-name" title="Permalink to this headline">¶</a></h2>
-<p>static::class</p>
 </div>
 <div class="section" id="install-specific-version-of-package-in-composer">
 <h2>Install specific version of package in Composer<a class="headerlink" href="#install-specific-version-of-package-in-composer" title="Permalink to this headline">¶</a></h2>
@@ -356,20 +319,23 @@ echo $_SESSION[‘youritem’];</dd>
 </div>
 <div class="section" id="php-short-forms">
 <h2>PHP Short Forms<a class="headerlink" href="#php-short-forms" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>&lt;?php if ($expression == true): ?&gt;</dt>
-<dd>This will show if the expression is true.</dd>
-<dt>&lt;?php else: ?&gt;</dt>
-<dd>Otherwise this will show.</dd>
-</dl>
-<p>&lt;?php endif; ?&gt;</p>
-<p>&lt;?php for ($i = 0; $i &lt; 5; ++$i): ?&gt;
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php if ($expression == true): ?&gt;
+  This will show if the expression is true.
+&lt;?php else: ?&gt;
+  Otherwise this will show.
+&lt;?php endif; ?&gt;
+
+&lt;?php for ($i = 0; $i &lt; 5; ++$i): ?&gt;
 Hello, there!
-&lt;?php endfor; ?&gt;</p>
-<p>&lt;? foreach($DATA as $row): ?&gt;
-&lt;li&gt;&lt;a href=”&lt;?=$row[‘link’]?&gt;” target=”_blank”&gt;&lt;?=$row[‘name’]?&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;? endforeach ?&gt;</p>
-<p>echo empty($address[‘street2’]) ? “Street2 is empty!” : $address[‘street2’];</p>
+&lt;?php endfor; ?&gt;
+
+&lt;? foreach($DATA as $row): ?&gt;
+&lt;li&gt;&lt;a href=&quot;&lt;?=$row[&#39;link&#39;]?&gt;&quot; target=&quot;_blank&quot;&gt;&lt;?=$row[&#39;name&#39;]?&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;? endforeach ?&gt;
+
+echo empty($address[&#39;street2&#39;]) ? &quot;Street2 is empty!&quot; : $address[&#39;street2&#39;];
+</pre></div>
+</div>
 </div>
 <div class="section" id="alternative-syntax-for-control-structures">
 <h2>Alternative syntax for control structures<a class="headerlink" href="#alternative-syntax-for-control-structures" title="Permalink to this headline">¶</a></h2>
@@ -385,8 +351,8 @@ e.g.,
 </pre></div>
 </div>
 </div>
-<div class="section" id="if">
-<h3>IF<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="if-else-if">
+<h3>IF &amp; ELSE IF<a class="headerlink" href="#if-else-if" title="Permalink to this headline">¶</a></h3>
 <div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php if ($a == 5): ?&gt;
 
 &lt;?php elseif(bool): ?&gt;
@@ -431,113 +397,113 @@ settype($var, ‘integer’): convert $var to integer type, and return either TU
 </div>
 <div class="section" id="php-design">
 <h2>PHP Design<a class="headerlink" href="#php-design" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="layout-page">
-<h2>Layout Page<a class="headerlink" href="#layout-page" title="Permalink to this headline">¶</a></h2>
-<p>You’re assuming that header.php would be called on the every page call. That’s wrong.
-You’re assuming that header.php will always be static. That’s wrong.
-You forgot to create a template for the page itself.
-The main rule everyone have to learn by heart:</p>
-<p>Not a single character has to be sent into browser, until all data gets ready.</p>
-<p>Why?</p>
-<p>it’s 2011 today. AJAX era. What if your code will have to send JSONed data instead of whole HTML page?
+<h3>Layout Page<a class="headerlink" href="#layout-page" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>You’re assuming that header.php would be called on the every page call. That’s wrong.</li>
+<li>You’re assuming that header.php will always be static. That’s wrong.</li>
+<li>You forgot to create a template for the page itself.</li>
+<li>The main rule everyone have to learn by heart: Not a single character has to be sent into browser, until all data gets ready.</li>
+</ul>
+</div>
+<div class="section" id="why">
+<h3>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h3>
+<p>It’s 2018 today. AJAX era. What if your code will have to send JSONed data instead of whole HTML page?
 there is a thing called HTTP header. Sometimes we have to send them. And it’s gets impossible if you already have your ornate HTML header sent.
 it’s for just 4-page site. Okay. Imagine you’ve got lucky and got a request for another 4-page site. You will have to change only templates and don’t touch engine files. That’s really great benefit.
 Imagine you’re going to make a custom &lt;title&gt; tag for your pages, based on the page content. Isn’t it extremely common thing? But you can’t make it without using templates.
 So, you have to have one common site template containing header and footer and also dedicated templates for the every php script.</p>
 <p>An example layout is going to be like this:</p>
+</div>
 <div class="section" id="page-itself">
-<h3>1. page itself.<a class="headerlink" href="#page-itself" title="Permalink to this headline">¶</a></h3>
+<h3>1. Page Itself<a class="headerlink" href="#page-itself" title="Permalink to this headline">¶</a></h3>
 <p>it outputs nothing but only gather required data and calls a template:</p>
-<p>&lt;?
-//include our settings, connect to database etc.
-include dirname($_SERVER[‘DOCUMENT_ROOT’]).’/cfg/settings.php’;
-//getting required data
-$DATA=dbgetarr(“SELECT * FROM links”);
-$pagetitle = “Links to friend sites”;
-//etc
-//and then call a template:
-$tpl = “links.tpl.php”;
-include “template.php”;
-?&gt;</p>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?
+   //include our settings, connect to database etc.
+   include dirname($_SERVER[&#39;DOCUMENT_ROOT&#39;]).&#39;/cfg/settings.php&#39;;
+
+   //getting required data
+   $DATA=dbgetarr(&quot;SELECT * FROM links&quot;);
+   $pagetitle = &quot;Links to friend sites&quot;;
+
+   //etc
+   //and then call a template:
+   $tpl = &quot;links.tpl.php&quot;;
+   include &quot;template.php&quot;;
+?&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="template-php-which-is-your-main-site-template">
-<h3>2. template.php which is your main site template,<a class="headerlink" href="#template-php-which-is-your-main-site-template" title="Permalink to this headline">¶</a></h3>
-<p>consists of your header and footer:</p>
-<p>&lt;html xmlns=”<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>”&gt;
-&lt;head&gt;
-&lt;title&gt;My site. &lt;?=$pagetitle?&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=”page”&gt;
-&lt;? include $tpl ?&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</p>
+<h3>2. template.php which is your main site template<a class="headerlink" href="#template-php-which-is-your-main-site-template" title="Permalink to this headline">¶</a></h3>
+<p>Consists of your header and footer</p>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;html&gt;
+   &lt;head&gt;
+      &lt;title&gt;My site. &lt;?=$pagetitle?&gt;&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
+      &lt;div id=&quot;page&quot;&gt;
+         &lt;? include $tpl ?&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="and-finally-links-tpl-php-is-the-actual-page-template">
 <h3>3. and finally links.tpl.php is the actual page template:<a class="headerlink" href="#and-finally-links-tpl-php-is-the-actual-page-template" title="Permalink to this headline">¶</a></h3>
-<p>&lt;h2&gt;&lt;?=$pagetitle?&gt;&lt;/h2&gt;
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;h2&gt;&lt;?=$pagetitle?&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;? foreach($DATA as $row): ?&gt;
-&lt;li&gt;&lt;a href=”&lt;?=$row[‘link’]?&gt;” target=”_blank”&gt;&lt;?=$row[‘name’]?&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;? endforeach ?&gt;
-&lt;ul&gt;</p>
+   &lt;? foreach($DATA as $row): ?&gt;
+      &lt;li&gt;&lt;a href=&quot;&lt;?=$row[&#39;link&#39;]?&gt;&quot; target=&quot;_blank&quot;&gt;&lt;?=$row[&#39;name&#39;]?&gt;&lt;/a&gt;&lt;/li&gt;
+   &lt;? endforeach ?&gt;
+&lt;ul&gt;
+</pre></div>
+</div>
 <p>easy, clean and maintainable.</p>
-</div>
-</div>
-<div class="section" id="php-notes">
-<h2>PHP Notes<a class="headerlink" href="#php-notes" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="redirect-to-another-page">
-<h3>Redirect to another page<a class="headerlink" href="#redirect-to-another-page" title="Permalink to this headline">¶</a></h3>
-<p>header(“Location: home.php”);</p>
-</div>
-<div class="section" id="check-query-parameters">
-<h3>Check query parameters<a class="headerlink" href="#check-query-parameters" title="Permalink to this headline">¶</a></h3>
-<p>$slide = ( isset($_GET[“id”]) &amp;&amp; trim($_GET[“id”]) == ‘link1’ ) ? trim ($_GET[“id”]) : ‘’;</p>
 </div>
 </div>
 <div class="section" id="passing-php-form-validate-error-message-back-to-submit-form">
 <h2>Passing php form validate error message back to submit form<a class="headerlink" href="#passing-php-form-validate-error-message-back-to-submit-form" title="Permalink to this headline">¶</a></h2>
 <p>On a quick glance try this</p>
-<p>Session way</p>
+<div class="section" id="session-way">
+<h3>Session way<a class="headerlink" href="#session-way" title="Permalink to this headline">¶</a></h3>
 <p>Make sure to start the session by doing session_start(); at the top of the file where saveComment is and the isset checked.</p>
-<p>function saveComment(){</p>
-<blockquote>
-<div><p>$id = isset($_POST[“articleId”]) ? $_POST[“articleId”] : ‘’;</p>
-<p>if ( isset( $_POST[‘saveChanges’] ) ) {</p>
-<dl class="docutils">
-<dt>if ( $_POST[‘name’] == “” ){</dt>
-<dd>$_SESSION[‘errorMessage’] = “Please fill out your name.”;
-header( “Location:”.HOME_PATH.”/.?action=viewArticle&amp;articleId=”.$_POST[‘articleID’].”“);</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>if ( isset( $_SESSION[‘errorMessage’] ) ) {</dt>
-<dd>echo $_SESSION[‘errorMessage’];</dd>
-</dl>
-<p>}
-or you can try</p>
-<p>POST way</p>
-<p>function saveComment(){</p>
-<blockquote>
-<div><blockquote>
-<div><p>$id = isset($_POST[“articleId”]) ? $_POST[“articleId”] : ‘’;</p>
-<p>if ( isset( $_POST[‘saveChanges’] ) ) {</p>
-<dl class="docutils">
-<dt>if ( $_POST[‘name’] == “” ){</dt>
-<dd>$error = urlencode(‘Please fill out your name’);
-header( “Location:”.HOME_PATH.”/.?action=viewArticle&amp;articleId=”.$_POST[‘articleID’]. “&amp;error=” . $error);</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<dl class="docutils">
-<dt>if ( isset( $_GET[‘error’] ) ) {</dt>
-<dd>echo urldecode($_GET[‘error’]);</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>function saveComment(){
+    $id = isset($_POST[&quot;articleId&quot;]) ? $_POST[&quot;articleId&quot;] : &#39;&#39;;
+
+    if ( isset( $_POST[&#39;saveChanges&#39;] ) ) {
+       if ( $_POST[&#39;name&#39;] == &quot;&quot; ){
+            $_SESSION[&#39;errorMessage&#39;] = &quot;Please fill out your name.&quot;;
+            header( &quot;Location:&quot;.HOME_PATH.&quot;/.?action=viewArticle&amp;articleId=&quot;.$_POST[&#39;articleID&#39;].&quot;&quot;);
+       }
+
+   if ( isset( $_SESSION[&#39;errorMessage&#39;] ) ) {
+       echo $_SESSION[&#39;errorMessage&#39;];
+   }
+}
+</pre></div>
+</div>
+<p>or you can try</p>
+</div>
+<div class="section" id="post-way">
+<h3>POST way<a class="headerlink" href="#post-way" title="Permalink to this headline">¶</a></h3>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>function saveComment(){
+   $id = isset($_POST[&quot;articleId&quot;]) ? $_POST[&quot;articleId&quot;] : &#39;&#39;;
+
+   if ( isset( $_POST[&#39;saveChanges&#39;] ) ) {
+      if ( $_POST[&#39;name&#39;] == &quot;&quot; ){
+         $error = urlencode(&#39;Please fill out your name&#39;);
+         header( &quot;Location:&quot;.HOME_PATH.&quot;/.?action=viewArticle&amp;articleId=&quot;.$_POST[&#39;articleID&#39;]. &quot;&amp;error=&quot; . $error);
+      }
+      if ( isset( $_GET[&#39;error&#39;] ) ) {
+         echo urldecode($_GET[&#39;error&#39;]);
+      }
+   }
+}
+</pre></div>
+</div>
+</div>
 <div class="section" id="note">
 <h3>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
 <p>You’re setting a variable $validate for your currently executing script. Afterwards, you send a redirect header. This will cause your browser to issue a new request, thus ending the currently executing script and scrapping the variable. The new request will trigger another script invocation, where the variable is not known anymore since it only existed for the duration of the first request.</p>
@@ -549,99 +515,16 @@ Some more information on the 3rd proposal: You write one PHP-Script which displa
 <p>the built-in function htmlentities(str) (or htmlspecialchars(str)) converts all the special characters to HTML entities (e.g., &gt; to &amp;gt;, &lt; to &amp;lt;, ” to &amp;quot;, &amp; to &amp;amp;). It is important to convert special characters, in particular, &lt; and &gt;, before echoing back to the client to prevent the so-called Cross-Site Scripting attack (XSS).</p>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>String Functions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>strlen(str): returns the length of the given string.
-substr(str, start [, length]): returns the substring from start position of length.
-strtoupper(str), strtolower(str): return the uppercase/lowecase of the given string.
-trim(str): trim whitespaces from the beginning and end of the given string.
-rtrim(str): trim whitespaces from the end of the given string.</p>
-</div>
-<div class="section" id="id2">
-<h2>Checking Variables<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>You can use the following built-in functions:
-isset($var): return TRUE is $var is set and is not NULL.
-unset($var): unset the $var.
-is_null($var): return TRUE if the $var is NULL.
-empty($var): return TRUE if the $var does not exist (i.e. !isset($var)) or its value is equivalent to boolean FALSE (e.g., NULL, 0, 0.0, ‘’, ‘0’, empty array and object).</p>
-</div>
-<div class="section" id="id3">
-<h2>Type Casting and Conversion<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>As an example, there are 3 ways to cast a string to an integer:
-intval(): The function intval($str) returns an equivalent integer or 0 if $str does not contain an valid integer. Take note that it cannot handle ‘0’, as the result is ambiguous.
-Casting operator (int): same as intval().
-settype($var, ‘integer’): convert $var to integer type, and return either TURE/FALSE.</p>
-</div>
-<div class="section" id="id4">
-<h2>PHP Design<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="id5">
-<h2>Layout Page<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>You’re assuming that header.php would be called on the every page call. That’s wrong.
-You’re assuming that header.php will always be static. That’s wrong.
-You forgot to create a template for the page itself.
-The main rule everyone have to learn by heart:</p>
-<p>Not a single character has to be sent into browser, until all data gets ready.</p>
-<p>Why?</p>
-<p>it’s 2011 today. AJAX era. What if your code will have to send JSONed data instead of whole HTML page?
-there is a thing called HTTP header. Sometimes we have to send them. And it’s gets impossible if you already have your ornate HTML header sent.
-it’s for just 4-page site. Okay. Imagine you’ve got lucky and got a request for another 4-page site. You will have to change only templates and don’t touch engine files. That’s really great benefit.
-Imagine you’re going to make a custom &lt;title&gt; tag for your pages, based on the page content. Isn’t it extremely common thing? But you can’t make it without using templates.
-So, you have to have one common site template containing header and footer and also dedicated templates for the every php script.</p>
-<p>An example layout is going to be like this:</p>
-<div class="section" id="id6">
-<h3>1. page itself.<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<p>it outputs nothing but only gather required data and calls a template:</p>
-<p>&lt;?
-//include our settings, connect to database etc.
-include dirname($_SERVER[‘DOCUMENT_ROOT’]).’/cfg/settings.php’;
-//getting required data
-$DATA=dbgetarr(“SELECT * FROM links”);
-$pagetitle = “Links to friend sites”;
-//etc
-//and then call a template:
-$tpl = “links.tpl.php”;
-include “template.php”;
-?&gt;</p>
-</div>
-<div class="section" id="id7">
-<h3>2. template.php which is your main site template,<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>consists of your header and footer:</p>
-<p>&lt;html xmlns=”<a class="reference external" href="http://www.w3.org/1999/xhtml">http://www.w3.org/1999/xhtml</a>”&gt;
-&lt;head&gt;
-&lt;title&gt;My site. &lt;?=$pagetitle?&gt;&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id=”page”&gt;
-&lt;? include $tpl ?&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</p>
-</div>
-<div class="section" id="id8">
-<h3>3. and finally links.tpl.php is the actual page template:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>&lt;h2&gt;&lt;?=$pagetitle?&gt;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;? foreach($DATA as $row): ?&gt;
-&lt;li&gt;&lt;a href=”&lt;?=$row[‘link’]?&gt;” target=”_blank”&gt;&lt;?=$row[‘name’]?&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;? endforeach ?&gt;
-&lt;ul&gt;</p>
-<p>easy, clean and maintainable.</p>
-</div>
-</div>
-<div class="section" id="id9">
-<h2>PHP Notes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id10">
-<h3>Redirect to another page<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="redirect-to-another-page">
+<h2>Redirect to another page<a class="headerlink" href="#redirect-to-another-page" title="Permalink to this headline">¶</a></h2>
 <p>header(“Location: home.php”);</p>
 </div>
-<div class="section" id="id11">
-<h3>Check query parameters<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="check-query-parameters">
+<h2>Check query parameters<a class="headerlink" href="#check-query-parameters" title="Permalink to this headline">¶</a></h2>
 <p>$slide = ( isset($_GET[“id”]) &amp;&amp; trim($_GET[“id”]) == ‘link1’ ) ? trim ($_GET[“id”]) : ‘’;</p>
 </div>
-</div>
-<div class="section" id="id12">
-<h2>Session Handling in PHP<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>Session Handling in PHP<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>To use session:
 - Start a session via session_start(). The session_start() starts a new session or resume the existing session.
 - The superglobal associative array $_SESSION maintain data of the session.
@@ -655,20 +538,20 @@ include “template.php”;
 1. Authenticate the user’s credential.
 2. Create a new session via session_start(), and place some tokens inside the session, e.g. $_SESSION[‘isLogin’] = TRUE.
 3. On all the other pages, resume the session ALSO via session_start(), and check if $_SESSION[‘isLogin’] is there, which indicates a resumed session rather than a new session.</p>
-<div class="section" id="id13">
-<h3>Session<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>Session<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>You need make sure to start the session at the top of every PHP file where you want to use the $_SESSION superglobal. Like this:</p>
-<dl class="docutils">
-<dt>&lt;?php</dt>
-<dd>session_start();
-echo $_SESSION[‘youritem’];</dd>
-</dl>
-<p>?&gt;</p>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
+  session_start();
+  echo $_SESSION[&#39;youritem&#39;];
+?&gt;
+</pre></div>
 </div>
-<div class="section" id="id14">
-<h3>Get the class name<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="get-the-class-name">
+<h2>Get the class name<a class="headerlink" href="#get-the-class-name" title="Permalink to this headline">¶</a></h2>
 <p>static::class</p>
-</div>
 </div>
 </div>
 
