@@ -2,6 +2,29 @@
 PL/SQL
 ======
 
+Block
+-----
+
+A PL/SQL block is made up of three sections
+- Declaration (optional)
+	Allows variables, types, procedures and functions to be defined for use within the block
+- Executable
+- Exception (optional)
+
+.. code:: plsql
+
+   [DECLARE --declarations]
+   -- declare any local variabled
+   BEGIN
+
+   	-- statements
+   
+   [EXCEPTION -- handlers]
+   -- handle exceptions
+
+   END;
+
+
 Notes
 -----
 

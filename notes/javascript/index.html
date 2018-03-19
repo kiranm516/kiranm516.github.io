@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PL/SQL &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Javascript &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -28,9 +28,7 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code Tools" href="../tools/tools-index.html" />
-    <link rel="prev" title="SQL" href="sql.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,7 +81,7 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../asp.net-webforms/index.html">ASP.NET WebForms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/best-practices.html">Best Practices</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../asp.net-webforms/best-practices.html#turn-off-viewstate">Turn off ViewState</a><ul>
@@ -149,18 +147,18 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Oracle</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dba.html">DBA</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dba.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="sql.html">SQL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="sql.html#sql-to-update-a-column-from-another-table">SQL to update a column from another table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/sql.html">SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/sql.html#sql-to-update-a-column-from-another-table">SQL to update a column from another table</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">PL/SQL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#block">Block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/plsql.html">PL/SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/plsql.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/plsql.html#notes">Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -269,15 +267,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Oracle</a> &raquo;</li>
-        
-      <li>PL/SQL</li>
+      <li>Javascript</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/oracle/plsql.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/javascript/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -290,26 +286,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pl-sql">
-<h1>PL/SQL<a class="headerlink" href="#pl-sql" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="block">
-<h2>Block<a class="headerlink" href="#block" title="Permalink to this headline">¶</a></h2>
-<p>A PL/SQL block is made up of three sections
-- Declaration (optional)</p>
-<blockquote>
-<div>Allows variables, types, procedures and functions to be defined for use within the block</div></blockquote>
-<ul class="simple">
-<li>Executable</li>
-<li>Exception (optional)</li>
-</ul>
-</div>
-<div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">PL/SQL:</span> <span class="pre">ORA-00904:</span> <span class="pre">:</span> <span class="pre">invalid</span> <span class="pre">identifier</span>
-<span class="pre">PLS-00231:</span> <span class="pre">function</span> <span class="pre">'GET_RATIO_NAME'</span> <span class="pre">may</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">in</span> <span class="pre">SQL</span></code></p>
-<ul class="simple">
-<li>For using function in a SQL statement in a stored procedure in a package. It need to be declared in the package specification</li>
-</ul>
+  <div class="section" id="javascript">
+<h1>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="check-if-console-exists">
+<h2>Check if console exists<a class="headerlink" href="#check-if-console-exists" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>if (window.console &amp;&amp; window.console.log) {</dt>
+<dd>// log</dd>
+</dl>
+<p>}</p>
 </div>
 </div>
 
@@ -318,15 +303,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../tools/tools-index.html" class="btn btn-neutral float-right" title="Code Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="sql.html" class="btn btn-neutral" title="SQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
