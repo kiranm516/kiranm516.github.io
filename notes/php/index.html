@@ -149,7 +149,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#notes">Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../oracle/sql.html">SQL</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../oracle/sql.html#sql-to-update-a-column-from-another-table">SQL to update a column from another table</a></li>
 </ul>
@@ -170,6 +173,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#session">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-class-name">Get the class name</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-specific-version-of-package-in-composer">Install specific version of package in Composer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-syntax-for-control-structures">Alternative syntax for control structures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#echo">Echo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if">IF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for-each">For each</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -242,13 +251,15 @@
 <div class="section" id="check-if-array-is-empty">
 <h2>Check if array is empty<a class="headerlink" href="#check-if-array-is-empty" title="Permalink to this headline">¶</a></h2>
 <p>If you just need to check if there are ANY elements in the array</p>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>if (empty($playerlist)) {
+  // list is empty.
+}
+</pre></div>
+</div>
+<p>If you need to clean out empty values before checking (generally done to prevent explodeing weird strings):</p>
 <dl class="docutils">
-<dt>if (empty($playerlist)) {</dt>
-<dd>// list is empty.</dd>
-</dl>
-<p>}
-If you need to clean out empty values before checking (generally done to prevent explodeing weird strings):</p>
-<dl class="docutils">
+<dt>..code :: php</dt>
+<dd><dl class="first docutils">
 <dt>foreach ($playerlist as $key =&gt; $value) {</dt>
 <dd><dl class="first docutils">
 <dt>if (empty($value)) {</dt>
@@ -257,11 +268,14 @@ If you need to clean out empty values before checking (generally done to prevent
 <p class="last">}</p>
 </dd>
 </dl>
-<p>}
-if (empty($playerlist)) {</p>
-<blockquote>
-<div>//empty array</div></blockquote>
 <p>}</p>
+<dl class="docutils">
+<dt>if (empty($playerlist)) {</dt>
+<dd>//empty array</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
 </div>
 <div class="section" id="session-handling-in-php">
 <h2>Session Handling in PHP<a class="headerlink" href="#session-handling-in-php" title="Permalink to this headline">¶</a></h2>
@@ -298,6 +312,40 @@ echo $_SESSION[‘youritem’];</dd>
 <p>composer require vendor/package:version</p>
 <p>for example:</p>
 <p>composer require refinery29/test-util:0.10.2</p>
+</div>
+<div class="section" id="alternative-syntax-for-control-structures">
+<h2>Alternative syntax for control structures<a class="headerlink" href="#alternative-syntax-for-control-structures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="echo">
+<h3>Echo<a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h3>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?= ?&gt;
+
+e.g.,
+&lt;?= $this-&gt;getName() ?&gt;
+
+# instead of
+&lt;?php echo $this-&gt;getName() ?&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="if">
+<h3>IF<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php if ($a == 5): ?&gt;
+
+&lt;?php elseif(bool): ?&gt;
+
+&lt;?php else: ?&gt;
+
+&lt;?php end if; ?&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="for-each">
+<h3>For each<a class="headerlink" href="#for-each" title="Permalink to this headline">¶</a></h3>
+<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php foreach($ibtsRespondedData as $record): ?&gt;
+&lt;?php endforeach ?&gt;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

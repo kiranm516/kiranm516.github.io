@@ -8,19 +8,24 @@ Check if array is empty
 
 If you just need to check if there are ANY elements in the array
 
-if (empty($playerlist)) {
+.. code:: php
+   
+   if (empty($playerlist)) {
      // list is empty.
-}
+   }
+
 If you need to clean out empty values before checking (generally done to prevent explodeing weird strings):
 
-foreach ($playerlist as $key => $value) {
-    if (empty($value)) {
-       unset($playerlist[$key]);
-    }
-}
-if (empty($playerlist)) {
-   //empty array
-}
+..code :: php
+  foreach ($playerlist as $key => $value) {
+  	if (empty($value)) {
+  		unset($playerlist[$key]);
+  	}
+  }
+
+  if (empty($playerlist)) {
+  	//empty array
+  }
 
 
 Session Handling in PHP
@@ -65,3 +70,43 @@ composer require vendor/package:version
 for example:
 
 composer require refinery29/test-util:0.10.2
+
+
+Alternative syntax for control structures
+=========================================
+
+Echo
+----
+
+.. code:: php
+    
+    <?= ?>
+    
+    e.g., 
+    <?= $this->getName() ?>
+
+    # instead of
+    <?php echo $this->getName() ?>
+
+IF
+--
+
+.. code:: php
+
+   <?php if ($a == 5): ?>
+
+   <?php elseif(bool): ?>
+
+   <?php else: ?>
+
+   <?php end if; ?>
+
+
+For each
+--------
+
+.. code:: php
+   
+   <?php foreach($ibtsRespondedData as $record): ?>
+   <?php endforeach ?>
+

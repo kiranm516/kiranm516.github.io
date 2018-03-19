@@ -2,6 +2,10 @@
 DBA
 ===
 
+Notes
+-----
+When installing/re-installing oracle check if any home already exists. If any upgrade just use the old HOME or else new home will be created
+
 Run host (windows) commands
 
 host <host-command>
