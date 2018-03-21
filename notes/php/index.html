@@ -148,6 +148,11 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">Javascript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../javascript/index.html#check-if-console-exists">Check if console exists</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#notes">Notes</a></li>
@@ -171,7 +176,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">PHP</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#check-if-array-is-empty">Check if array is empty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#session-handling-in-php">Session Handling in PHP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#session">Session</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-specific-version-of-package-in-composer">Install specific version of package in Composer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#php-short-forms">PHP Short Forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#alternative-syntax-for-control-structures">Alternative syntax for control structures</a><ul>
@@ -199,10 +203,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#redirect-to-another-page">Redirect to another page</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-query-parameters">Check query parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Session Handling in PHP</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Session</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#get-the-class-name">Get the class name</a></li>
 </ul>
 </li>
@@ -276,12 +276,23 @@
 <div class="section" id="check-if-array-is-empty">
 <h2>Check if array is empty<a class="headerlink" href="#check-if-array-is-empty" title="Permalink to this headline">¶</a></h2>
 <p>If you just need to check if there are ANY elements in the array</p>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>if (empty($playerlist)) {
-  // list is empty.
-}
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">if (empty($playerlist)) {</span>
+<span class="x">  // list is empty.</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 <p>If you need to clean out empty values before checking (generally done to prevent explodeing weird strings):</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">foreach ($playerlist as $key =&gt; $value) {</span>
+<span class="x">     if (empty($value)) {</span>
+<span class="x">             unset($playerlist[$key]);</span>
+<span class="x">     }</span>
+<span class="x">}</span>
+
+<span class="x">if (empty($playerlist)) {</span>
+<span class="x">     //empty array</span>
+<span class="x">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="session-handling-in-php">
 <h2>Session Handling in PHP<a class="headerlink" href="#session-handling-in-php" title="Permalink to this headline">¶</a></h2>
@@ -296,44 +307,45 @@
 <li>You can use function session_id() to retrieve the session ID.</li>
 <li>To terminate the session explicitly, use session_write_close().</li>
 </ul>
-<p>The procedure is:
-1. Authenticate the user’s credential.
-2. Create a new session via session_start(), and place some tokens inside the session, e.g. $_SESSION[‘isLogin’] = TRUE.
-3. On all the other pages, resume the session ALSO via session_start(), and check if $_SESSION[‘isLogin’] is there, which indicates a resumed session rather than a new session.</p>
-</div>
-<div class="section" id="session">
-<h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
+<p>The procedure is:</p>
+<ol class="arabic simple">
+<li>Authenticate the user’s credential.</li>
+<li>Create a new session via session_start(), and place some tokens inside the session, e.g. $_SESSION[‘isLogin’] = TRUE.</li>
+<li>On all the other pages, resume the session ALSO via session_start(), and check if $_SESSION[‘isLogin’] is there, which indicates a resumed session rather than a new session.</li>
+</ol>
 <p>You need make sure to start the session at the top of every PHP file where you want to use the $_SESSION superglobal. Like this:</p>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
-  session_start();
-  echo $_SESSION[&#39;youritem&#39;];
-?&gt;
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+  <span class="nb">session_start</span><span class="p">();</span>
+  <span class="k">echo</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;youritem&#39;</span><span class="p">];</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="install-specific-version-of-package-in-composer">
 <h2>Install specific version of package in Composer<a class="headerlink" href="#install-specific-version-of-package-in-composer" title="Permalink to this headline">¶</a></h2>
-<p>composer require vendor/package:version</p>
-<p>for example:</p>
-<p>composer require refinery29/test-util:0.10.2</p>
+<div class="code batch highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">composer require vendor/package:version</span>
+<span class="x"># for example:</span>
+<span class="x">composer require refinery29/test-util:0.10.2</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="php-short-forms">
 <h2>PHP Short Forms<a class="headerlink" href="#php-short-forms" title="Permalink to this headline">¶</a></h2>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php if ($expression == true): ?&gt;
-  This will show if the expression is true.
-&lt;?php else: ?&gt;
-  Otherwise this will show.
-&lt;?php endif; ?&gt;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$expression</span> <span class="o">==</span> <span class="k">true</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  This will show if the expression is true.</span>
+<span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  Otherwise this will show.</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-&lt;?php for ($i = 0; $i &lt; 5; ++$i): ?&gt;
-Hello, there!
-&lt;?php endfor; ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="nv">$i</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">Hello, there!</span>
+<span class="cp">&lt;?php</span> <span class="k">endfor</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-&lt;? foreach($DATA as $row): ?&gt;
-&lt;li&gt;&lt;a href=&quot;&lt;?=$row[&#39;link&#39;]?&gt;&quot; target=&quot;_blank&quot;&gt;&lt;?=$row[&#39;name&#39;]?&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;? endforeach ?&gt;
+<span class="cp">&lt;?</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$DATA</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;li&gt;&lt;a href=&quot;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&quot; target=&quot;_blank&quot;&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="cp">&lt;?</span> <span class="k">endforeach</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-echo empty($address[&#39;street2&#39;]) ? &quot;Street2 is empty!&quot; : $address[&#39;street2&#39;];
+<span class="x">echo empty($address[&#39;street2&#39;]) ? &quot;Street2 is empty!&quot; : $address[&#39;street2&#39;];</span>
 </pre></div>
 </div>
 </div>
@@ -341,32 +353,32 @@ echo empty($address[&#39;street2&#39;]) ? &quot;Street2 is empty!&quot; : $addre
 <h2>Alternative syntax for control structures<a class="headerlink" href="#alternative-syntax-for-control-structures" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="echo">
 <h3>Echo<a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h3>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?= ?&gt;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?</span><span class="o">=</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-e.g.,
-&lt;?= $this-&gt;getName() ?&gt;
+<span class="x">// e.g.,</span>
+<span class="cp">&lt;?</span><span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-# instead of
-&lt;?php echo $this-&gt;getName() ?&gt;
+<span class="x"># instead of</span>
+<span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="if-else-if">
 <h3>IF &amp; ELSE IF<a class="headerlink" href="#if-else-if" title="Permalink to this headline">¶</a></h3>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php if ($a == 5): ?&gt;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$a</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-&lt;?php elseif(bool): ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">elseif</span><span class="p">(</span><span class="nx">bool</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-&lt;?php else: ?&gt;
+<span class="cp">&lt;?php</span> <span class="k">else</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
 
-&lt;?php end if; ?&gt;
+<span class="cp">&lt;?php</span> <span class="nb">end</span> <span class="k">if</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="for-each">
 <h3>For each<a class="headerlink" href="#for-each" title="Permalink to this headline">¶</a></h3>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php foreach($ibtsRespondedData as $record): ?&gt;
-&lt;?php endforeach ?&gt;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$ibtsRespondedData</span> <span class="k">as</span> <span class="nv">$record</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="cp">&lt;?php</span> <span class="k">endforeach</span> <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 <p>the built-in function htmlentities(str) (or htmlspecialchars(str)) converts all the special characters to HTML entities (e.g., &gt; to &amp;gt;, &lt; to &amp;lt;, ” to &amp;quot;, &amp; to &amp;amp;). It is important to convert special characters, in particular, &lt; and &gt;, before echoing back to the client to prevent the so-called Cross-Site Scripting attack (XSS).</p>
@@ -390,10 +402,12 @@ empty($var): return TRUE if the $var does not exist (i.e. !isset($var)) or its v
 </div>
 <div class="section" id="type-casting-and-conversion">
 <h2>Type Casting and Conversion<a class="headerlink" href="#type-casting-and-conversion" title="Permalink to this headline">¶</a></h2>
-<p>As an example, there are 3 ways to cast a string to an integer:
-intval(): The function intval($str) returns an equivalent integer or 0 if $str does not contain an valid integer. Take note that it cannot handle ‘0’, as the result is ambiguous.
-Casting operator (int): same as intval().
-settype($var, ‘integer’): convert $var to integer type, and return either TURE/FALSE.</p>
+<p>As an example, there are 3 ways to cast a string to an integer:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">intval()</span></code> - The function intval($str) returns an equivalent integer or 0 if $str does not contain an valid integer. Take note that it cannot handle ‘0’, as the result is ambiguous.</li>
+<li>Casting operator (int): same as intval().</li>
+<li>settype($var, ‘integer’): convert $var to integer type, and return either TURE/FALSE.</li>
+</ul>
 </div>
 <div class="section" id="php-design">
 <h2>PHP Design<a class="headerlink" href="#php-design" title="Permalink to this headline">¶</a></h2>
@@ -418,46 +432,46 @@ So, you have to have one common site template containing header and footer and a
 <div class="section" id="page-itself">
 <h3>1. Page Itself<a class="headerlink" href="#page-itself" title="Permalink to this headline">¶</a></h3>
 <p>it outputs nothing but only gather required data and calls a template:</p>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?
-   //include our settings, connect to database etc.
-   include dirname($_SERVER[&#39;DOCUMENT_ROOT&#39;]).&#39;/cfg/settings.php&#39;;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?</span>
+   <span class="c1">//include our settings, connect to database etc.</span>
+   <span class="k">include</span> <span class="nb">dirname</span><span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;DOCUMENT_ROOT&#39;</span><span class="p">])</span><span class="o">.</span><span class="s1">&#39;/cfg/settings.php&#39;</span><span class="p">;</span>
 
-   //getting required data
-   $DATA=dbgetarr(&quot;SELECT * FROM links&quot;);
-   $pagetitle = &quot;Links to friend sites&quot;;
+   <span class="c1">//getting required data</span>
+   <span class="nv">$DATA</span><span class="o">=</span><span class="nx">dbgetarr</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM links&quot;</span><span class="p">);</span>
+   <span class="nv">$pagetitle</span> <span class="o">=</span> <span class="s2">&quot;Links to friend sites&quot;</span><span class="p">;</span>
 
-   //etc
-   //and then call a template:
-   $tpl = &quot;links.tpl.php&quot;;
-   include &quot;template.php&quot;;
-?&gt;
+   <span class="c1">//etc</span>
+   <span class="c1">//and then call a template:</span>
+   <span class="nv">$tpl</span> <span class="o">=</span> <span class="s2">&quot;links.tpl.php&quot;</span><span class="p">;</span>
+   <span class="k">include</span> <span class="s2">&quot;template.php&quot;</span><span class="p">;</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="template-php-which-is-your-main-site-template">
 <h3>2. template.php which is your main site template<a class="headerlink" href="#template-php-which-is-your-main-site-template" title="Permalink to this headline">¶</a></h3>
 <p>Consists of your header and footer</p>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;html&gt;
-   &lt;head&gt;
-      &lt;title&gt;My site. &lt;?=$pagetitle?&gt;&lt;/title&gt;
-   &lt;/head&gt;
-   &lt;body&gt;
-      &lt;div id=&quot;page&quot;&gt;
-         &lt;? include $tpl ?&gt;
-      &lt;/div&gt;
-   &lt;/body&gt;
-&lt;/html&gt;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;html&gt;</span>
+<span class="x">   &lt;head&gt;</span>
+<span class="x">      &lt;title&gt;My site. </span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$pagetitle</span><span class="cp">?&gt;</span><span class="x">&lt;/title&gt;</span>
+<span class="x">   &lt;/head&gt;</span>
+<span class="x">   &lt;body&gt;</span>
+<span class="x">      &lt;div id=&quot;page&quot;&gt;</span>
+<span class="x">         </span><span class="cp">&lt;?</span> <span class="k">include</span> <span class="nv">$tpl</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">      &lt;/div&gt;</span>
+<span class="x">   &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="and-finally-links-tpl-php-is-the-actual-page-template">
 <h3>3. and finally links.tpl.php is the actual page template:<a class="headerlink" href="#and-finally-links-tpl-php-is-the-actual-page-template" title="Permalink to this headline">¶</a></h3>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;h2&gt;&lt;?=$pagetitle?&gt;&lt;/h2&gt;
-&lt;ul&gt;
-   &lt;? foreach($DATA as $row): ?&gt;
-      &lt;li&gt;&lt;a href=&quot;&lt;?=$row[&#39;link&#39;]?&gt;&quot; target=&quot;_blank&quot;&gt;&lt;?=$row[&#39;name&#39;]?&gt;&lt;/a&gt;&lt;/li&gt;
-   &lt;? endforeach ?&gt;
-&lt;ul&gt;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;h2&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$pagetitle</span><span class="cp">?&gt;</span><span class="x">&lt;/h2&gt;</span>
+<span class="x">&lt;ul&gt;</span>
+<span class="x">   </span><span class="cp">&lt;?</span> <span class="k">foreach</span><span class="p">(</span><span class="nv">$DATA</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">      &lt;li&gt;&lt;a href=&quot;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&quot; target=&quot;_blank&quot;&gt;</span><span class="cp">&lt;?</span><span class="o">=</span><span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="cp">?&gt;</span><span class="x">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="x">   </span><span class="cp">&lt;?</span> <span class="k">endforeach</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;ul&gt;</span>
 </pre></div>
 </div>
 <p>easy, clean and maintainable.</p>
@@ -469,38 +483,38 @@ So, you have to have one common site template containing header and footer and a
 <div class="section" id="session-way">
 <h3>Session way<a class="headerlink" href="#session-way" title="Permalink to this headline">¶</a></h3>
 <p>Make sure to start the session by doing session_start(); at the top of the file where saveComment is and the isset checked.</p>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>function saveComment(){
-    $id = isset($_POST[&quot;articleId&quot;]) ? $_POST[&quot;articleId&quot;] : &#39;&#39;;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">function saveComment(){</span>
+<span class="x">    $id = isset($_POST[&quot;articleId&quot;]) ? $_POST[&quot;articleId&quot;] : &#39;&#39;;</span>
 
-    if ( isset( $_POST[&#39;saveChanges&#39;] ) ) {
-       if ( $_POST[&#39;name&#39;] == &quot;&quot; ){
-            $_SESSION[&#39;errorMessage&#39;] = &quot;Please fill out your name.&quot;;
-            header( &quot;Location:&quot;.HOME_PATH.&quot;/.?action=viewArticle&amp;articleId=&quot;.$_POST[&#39;articleID&#39;].&quot;&quot;);
-       }
+<span class="x">    if ( isset( $_POST[&#39;saveChanges&#39;] ) ) {</span>
+<span class="x">       if ( $_POST[&#39;name&#39;] == &quot;&quot; ){</span>
+<span class="x">            $_SESSION[&#39;errorMessage&#39;] = &quot;Please fill out your name.&quot;;</span>
+<span class="x">            header( &quot;Location:&quot;.HOME_PATH.&quot;/.?action=viewArticle&amp;articleId=&quot;.$_POST[&#39;articleID&#39;].&quot;&quot;);</span>
+<span class="x">       }</span>
 
-   if ( isset( $_SESSION[&#39;errorMessage&#39;] ) ) {
-       echo $_SESSION[&#39;errorMessage&#39;];
-   }
-}
+<span class="x">   if ( isset( $_SESSION[&#39;errorMessage&#39;] ) ) {</span>
+<span class="x">       echo $_SESSION[&#39;errorMessage&#39;];</span>
+<span class="x">   }</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 <p>or you can try</p>
 </div>
 <div class="section" id="post-way">
 <h3>POST way<a class="headerlink" href="#post-way" title="Permalink to this headline">¶</a></h3>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>function saveComment(){
-   $id = isset($_POST[&quot;articleId&quot;]) ? $_POST[&quot;articleId&quot;] : &#39;&#39;;
+<div class="code php highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">function saveComment(){</span>
+<span class="x">   $id = isset($_POST[&quot;articleId&quot;]) ? $_POST[&quot;articleId&quot;] : &#39;&#39;;</span>
 
-   if ( isset( $_POST[&#39;saveChanges&#39;] ) ) {
-      if ( $_POST[&#39;name&#39;] == &quot;&quot; ){
-         $error = urlencode(&#39;Please fill out your name&#39;);
-         header( &quot;Location:&quot;.HOME_PATH.&quot;/.?action=viewArticle&amp;articleId=&quot;.$_POST[&#39;articleID&#39;]. &quot;&amp;error=&quot; . $error);
-      }
-      if ( isset( $_GET[&#39;error&#39;] ) ) {
-         echo urldecode($_GET[&#39;error&#39;]);
-      }
-   }
-}
+<span class="x">   if ( isset( $_POST[&#39;saveChanges&#39;] ) ) {</span>
+<span class="x">      if ( $_POST[&#39;name&#39;] == &quot;&quot; ){</span>
+<span class="x">         $error = urlencode(&#39;Please fill out your name&#39;);</span>
+<span class="x">         header( &quot;Location:&quot;.HOME_PATH.&quot;/.?action=viewArticle&amp;articleId=&quot;.$_POST[&#39;articleID&#39;]. &quot;&amp;error=&quot; . $error);</span>
+<span class="x">      }</span>
+<span class="x">      if ( isset( $_GET[&#39;error&#39;] ) ) {</span>
+<span class="x">         echo urldecode($_GET[&#39;error&#39;]);</span>
+<span class="x">      }</span>
+<span class="x">   }</span>
+<span class="x">}</span>
 </pre></div>
 </div>
 </div>
@@ -522,32 +536,6 @@ Some more information on the 3rd proposal: You write one PHP-Script which displa
 <div class="section" id="check-query-parameters">
 <h2>Check query parameters<a class="headerlink" href="#check-query-parameters" title="Permalink to this headline">¶</a></h2>
 <p>$slide = ( isset($_GET[“id”]) &amp;&amp; trim($_GET[“id”]) == ‘link1’ ) ? trim ($_GET[“id”]) : ‘’;</p>
-</div>
-<div class="section" id="id1">
-<h2>Session Handling in PHP<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>To use session:
-- Start a session via session_start(). The session_start() starts a new session or resume the existing session.
-- The superglobal associative array $_SESSION maintain data of the session.
-- You can check if a key-value pair exists via isset($_SESSION[‘key’]).
-- You can set a key-value pair for this session via $_SESSION[‘key’] = value.
-- You can retrieve value of a particular key via $_SESSION[‘key’].
-- You can remove a key-value pair via unset($_SESSION[‘key’]).
-- You can use function session_id() to retrieve the session ID.
-- To terminate the session explicitly, use session_write_close().</p>
-<p>The procedure is:
-1. Authenticate the user’s credential.
-2. Create a new session via session_start(), and place some tokens inside the session, e.g. $_SESSION[‘isLogin’] = TRUE.
-3. On all the other pages, resume the session ALSO via session_start(), and check if $_SESSION[‘isLogin’] is there, which indicates a resumed session rather than a new session.</p>
-<div class="section" id="id2">
-<h3>Session<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p>You need make sure to start the session at the top of every PHP file where you want to use the $_SESSION superglobal. Like this:</p>
-<div class="code php highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?php
-  session_start();
-  echo $_SESSION[&#39;youritem&#39;];
-?&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="get-the-class-name">
 <h2>Get the class name<a class="headerlink" href="#get-the-class-name" title="Permalink to this headline">¶</a></h2>

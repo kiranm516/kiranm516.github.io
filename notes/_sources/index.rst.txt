@@ -11,6 +11,8 @@ My Scribblings's
    git/git-index.rst
    guides/guides-index.rst
    html/index.rst
+   javascript/index.rst
+   mysql/index.rst
    oracle/index.rst
    tools/tools-index.rst
    php/index.rst
