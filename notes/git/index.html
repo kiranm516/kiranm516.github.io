@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gradle" href="../gradle/index.html" />
+    <link rel="prev" title="Docker" href="../docker/index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -81,7 +83,7 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../asp.net-webforms/index.html">ASP.NET WebForms</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/best-practices.html">Best Practices</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../asp.net-webforms/best-practices.html#turn-off-viewstate">Turn off ViewState</a><ul>
@@ -93,11 +95,46 @@
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/code-blocks.html">Code Blocks</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#space-usage-001">Space Usage </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#save-docker-image-002">Save docker image </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#change-vhd-location-003">Change VHD location </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#check-these-links">Check these links</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-all-previous-commits-in-git-001">Deleting all previous commits in Git </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rename-local-and-remote-branch-002">Rename local and remote branch </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-proxy-in-git-003">Set proxy in Git </a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gradle/index.html">Gradle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gradle/index.html#what-is-gradle">What is Gradle?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gradle/index.html#installing-gradle">Installing Gradle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gradle/index.html#basics-concepts">Basics Concepts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#build-gradle">build.gradle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#quite-mode">Quite mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#project">Project</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gradle/index.html#task">Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#list-all-tasks">List all tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#dependson">dependsOn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#finalizedby">finalizedBy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#mustrunafter">mustRunAfter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/index.html">Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html#aio">AIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html#discrete-math">Discrete Math</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guides/index.html#web-development">Web Development</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../html/index.html">HTML CSS &amp; Javascript</a><ul>
@@ -171,6 +208,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../sw-eng/index.html#links-for-reference">Links for reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sw-eng/index.html#glossary">Glossary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sw-eng/index.html#bibilography">Bibilography</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/index.html">Code Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tools/index.html#code-review">Code Review</a></li>
 </ul>
 </li>
 </ul>
@@ -312,6 +353,15 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../gradle/index.html" class="btn btn-neutral float-right" title="Gradle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../docker/index.html" class="btn btn-neutral" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
