@@ -7,13 +7,13 @@ My Scribblings's
    asp.net-webforms/index.rst
    code-design/code-design-index.rst
    docker/index.rst
-   gradle/gradle-index.rst
    git/git-index.rst
+   gradle/gradle-index.rst
    guides/guides-index.rst
    html/index.rst
    javascript/index.rst
    mysql/index.rst
    oracle/index.rst
-   tools/tools-index.rst
    php/index.rst
    sw-eng/index.rst
+   tools/tools-index.rst
