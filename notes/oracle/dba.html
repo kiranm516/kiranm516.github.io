@@ -103,6 +103,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#space-usage-001">Space Usage </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#save-docker-image-002">Save docker image </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#change-vhd-location-003">Change VHD location </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#start-bash-from-running-container-004">Start bash from running container </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#commit">Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#check-these-links">Check these links</a></li>
 </ul>
 </li>
@@ -126,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#dependson">dependsOn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#finalizedby">finalizedBy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#mustrunafter">mustRunAfter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gradle/index.html#include-jars-from-local-directory">Include jars from local directory</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +159,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Oracle</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">DBA</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ezconnect-syntax">EZConnect Syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sql.html">SQL</a><ul>
@@ -283,8 +289,21 @@
             
   <div class="section" id="dba">
 <h1>DBA<a class="headerlink" href="#dba" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ezconnect-syntax">
+<h2>EZConnect Syntax<a class="headerlink" href="#ezconnect-syntax" title="Permalink to this headline">¶</a></h2>
+<div class="code sql highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONN</span><span class="p">[</span><span class="n">ECT</span><span class="p">]</span> <span class="n">username</span><span class="o">/</span><span class="n">password</span><span class="o">@</span><span class="p">[</span><span class="o">//</span><span class="p">]</span><span class="n">host</span><span class="p">[:</span><span class="n">port</span><span class="p">][</span><span class="o">/</span><span class="n">service_name</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Where:</p>
+<ul class="simple">
+<li>//            - Optional. Specify // for URL</li>
+<li>host          - Required. Specify the host name or IP address of the database server computer. The host name is domain-qualified if the local operating system configuration specifies a domain.</li>
+<li>port          - Optional. Specify the listening port. The default is 1521.</li>
+<li>service_name  - Optional. Specify the service name of the database. The default is the host of the database server computer. Note that this might not be the same value that you entered in the connect string for the host. For example, for the host emp, the service name might be emp.acme.com.</li>
+</ul>
+<p>If the host does not match the database service name, then enter a valid service name value rather than accepting the default.</p>
 <div class="section" id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <p>When installing/re-installing oracle check if any home already exists. If any upgrade just use the old HOME or else new home will be created</p>
 <p>Run host (windows) commands</p>
 <p>host &lt;host-command&gt;</p>
@@ -293,6 +312,7 @@
 <p>ALTER USER kiran IDENTIFIED BY passme</p>
 <p>GRANT CONNECT TO kiran;</p>
 <p>GRANT ALL PRIVILEGES TO kiran IDENTIFIED BY passme;</p>
+</div>
 </div>
 </div>
 

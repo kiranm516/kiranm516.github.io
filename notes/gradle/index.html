@@ -103,6 +103,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#space-usage-001">Space Usage </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#save-docker-image-002">Save docker image </a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#change-vhd-location-003">Change VHD location </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#start-bash-from-running-container-004">Start bash from running container </a></li>
+<li class="toctree-l2"><a class="reference internal" href="../docker/index.html#commit">Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../docker/index.html#check-these-links">Check these links</a></li>
 </ul>
 </li>
@@ -126,6 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#dependson">dependsOn</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#finalizedby">finalizedBy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mustrunafter">mustRunAfter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#include-jars-from-local-directory">Include jars from local directory</a></li>
 </ul>
 </li>
 </ul>
@@ -156,7 +159,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#notes">Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#ezconnect-syntax">EZConnect Syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../oracle/dba.html#notes">Notes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../oracle/sql.html">SQL</a><ul>
@@ -365,6 +371,12 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 </div>
 <div class="section" id="mustrunafter">
 <h3>mustRunAfter<a class="headerlink" href="#mustrunafter" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="include-jars-from-local-directory">
+<h3>Include jars from local directory<a class="headerlink" href="#include-jars-from-local-directory" title="Permalink to this headline">¶</a></h3>
+<p>..code:: groovy</p>
+<blockquote>
+<div>compile fileTree(dir: ‘libs’ include: [‘<a href="#id1"><span class="problematic" id="id2">*</span></a>.jar’])</div></blockquote>
 </div>
 </div>
 </div>

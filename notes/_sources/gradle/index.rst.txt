@@ -97,3 +97,11 @@ When run eatBreadkFast afterwards brushYourTeeth task is also run
 
 mustRunAfter
 ------------
+
+Include jars from local directory
+---------------------------------
+
+..code:: groovy
+  
+  compile fileTree(dir: 'libs' include: ['*.jar'])
+
