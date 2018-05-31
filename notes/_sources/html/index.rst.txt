@@ -7,3 +7,5 @@ HTML CSS & Javascript
 
    html.rst
    js.rst
+   security.rst
+   

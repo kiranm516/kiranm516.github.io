@@ -2,7 +2,6 @@
 HTML
 ====
 
-
 Special characters codes
 ========================
 
