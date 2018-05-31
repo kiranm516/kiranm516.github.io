@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>MySQL &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Security &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Oracle" href="../oracle/index.html" />
-    <link rel="prev" title="Red Hat Enterprise Linux" href="../linux/rhel.html" /> 
+    <link rel="next" title="Software Engineering &amp; Design" href="../sw-eng/index.html" />
+    <link rel="prev" title="PHP" href="../php/index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -216,7 +216,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">MySQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#ezconnect-syntax">EZConnect Syntax</a><ul>
@@ -270,8 +270,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../php/index.html#get-the-class-name">Get the class name</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../security/index.html">Security</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../security/index.html#references">References</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sw-eng/index.html">Software Engineering &amp; Design</a><ul>
@@ -368,13 +368,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>MySQL</li>
+      <li>Security</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/mysql/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/security/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -387,22 +387,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mysql">
-<h1>MySQL<a class="headerlink" href="#mysql" title="Permalink to this headline">¶</a></h1>
-<div class="code sql highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">STR_TO_DATE</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="nb">format</span><span class="p">)</span>
-
-<span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">,</span>
-
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">STR_TO_DATE</span><span class="p">(</span><span class="s1">&#39;01,5,2013&#39;</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">,%m,%Y&#39;</span><span class="p">);</span>
-     <span class="o">-&gt;</span> <span class="s1">&#39;2013-05-01&#39;</span>
-<span class="n">mysql</span><span class="o">&gt;</span> <span class="n">SELECT</span> <span class="n">STR_TO_DATE</span><span class="p">(</span><span class="s1">&#39;May 1, 2013&#39;</span><span class="p">,</span><span class="s1">&#39;%M </span><span class="si">%d</span><span class="s1">,%Y&#39;</span><span class="p">);</span>
-     <span class="o">-&gt;</span> <span class="s1">&#39;2013-05-01&#39;</span>
-
-<span class="nb">format</span><span class="p">:</span>
-<span class="o">%</span><span class="n">d</span> <span class="o">-</span> <span class="n">dd</span>
-<span class="o">%</span><span class="n">m</span> <span class="o">-</span> <span class="n">MM</span>
-<span class="o">%</span><span class="n">Y</span> <span class="o">-</span> <span class="n">yyyy</span>
-</pre></div>
+  <div class="section" id="security">
+<h1>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://portswigger.net/kb/issues">https://portswigger.net/kb/issues</a></li>
+</ul>
 </div>
 </div>
 
@@ -414,10 +405,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../oracle/index.html" class="btn btn-neutral float-right" title="Oracle" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../sw-eng/index.html" class="btn btn-neutral float-right" title="Software Engineering &amp; Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../linux/rhel.html" class="btn btn-neutral" title="Red Hat Enterprise Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../php/index.html" class="btn btn-neutral" title="PHP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

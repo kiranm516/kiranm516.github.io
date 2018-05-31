@@ -19,6 +19,7 @@ My Scribblings's
    mysql/index.rst
    oracle/index.rst
    php/index.rst
+   security/index.rst
    sw-eng/index.rst
    tools/index.rst
 
