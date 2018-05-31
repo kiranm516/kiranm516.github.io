@@ -7,11 +7,13 @@ Block
 
 A PL/SQL block is made up of three sections
 - Declaration (optional)
-	Allows variables, types, procedures and functions to be defined for use within the block
+	
+    - Allows variables, types, procedures and functions to be defined for use within the block
+    
 - Executable
 - Exception (optional)
 
-.. code:: plsql
+.. code:: sql
 
    [DECLARE --declarations]
    -- declare any local variabled

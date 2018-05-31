@@ -57,6 +57,25 @@ Finally, to check the currently set proxy:
 ``git config --global --get http.proxy``
 
 
+Git log filter by branch [004]_
+===============================
+
+Assuming that your branch was created off of master:
+
+.. code:: shell
+  
+   git cherry -v master
+
+   # or
+
+   git log master..
+
+If your branch was made off of origin/master, then say origin/master instead of master.
+
+References
+==========
+
 .. [001] https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github
 .. [002] https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git
 .. [003] https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server
+.. [004] https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch

@@ -2,12 +2,20 @@
 Software Engineering & Design
 =============================
 
+.. toctree::
+   :maxdepth: 1
+
+   requirements.rst
+   high-level-design.rst
+   se.rst
+   writing-requirements.rst
+
 Links for reference
 -------------------
 https://softwareengineering.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
-Glossary
---------
+Glossary [001]_ [002]_ [003]_
+-----------------------------
 
 .. csv-table:: Glossary
    

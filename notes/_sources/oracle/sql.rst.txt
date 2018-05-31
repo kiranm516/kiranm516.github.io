@@ -11,4 +11,3 @@ SET
     SI.AccountNumber = RAN.AccountNumber
 WHERE
     SI.LeadID = RAN.LeadID;
-

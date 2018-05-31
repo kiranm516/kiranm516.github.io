@@ -9,7 +9,6 @@ Space Usage [001]_
 
    docker system df
 
-
 Save docker image [002]_
 ------------------------
 

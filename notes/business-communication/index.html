@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SQL &mdash; My Scribblings 0.1.1 documentation</title>
+  <title>Communication &mdash; My Scribblings 0.1.1 documentation</title>
   
 
   
@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="PL/SQL" href="plsql.html" />
-    <link rel="prev" title="DBA" href="dba.html" /> 
+    <link rel="next" title="Code Design" href="../code-design/index.html" />
+    <link rel="prev" title="Code Blocks" href="../asp.net-webforms/code-blocks.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -95,9 +95,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../asp.net-webforms/code-blocks.html">Code Blocks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../business-communication/index.html">Communication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../business-communication/index.html#business-communication-ritx-skills101x-edx">Business Communication: RITx: SKILLS101x (edX)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../business-communication/index.html#learn">Learn</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Communication</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#business-communication-ritx-skills101x-edx">Business Communication: RITx: SKILLS101x (edX)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learn">Learn</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
@@ -208,24 +208,24 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../mysql/index.html">MySQL</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Oracle</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dba.html">DBA</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dba.html#ezconnect-syntax">EZConnect Syntax</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dba.html#notes">Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../oracle/index.html">Oracle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/dba.html">DBA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/dba.html#ezconnect-syntax">EZConnect Syntax</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../oracle/dba.html#notes">Notes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">SQL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#sql-to-update-a-column-from-another-table">SQL to update a column from another table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/sql.html">SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/sql.html#sql-to-update-a-column-from-another-table">SQL to update a column from another table</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="plsql.html">PL/SQL</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="plsql.html#block">Block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="plsql.html#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/plsql.html">PL/SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/plsql.html#block">Block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../oracle/plsql.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#links-for-reference">Links for reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oracle/index.html#links-for-reference">Links for reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../php/index.html">PHP</a><ul>
@@ -355,15 +355,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Oracle</a> &raquo;</li>
-        
-      <li>SQL</li>
+      <li>Communication</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/oracle/sql.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/business-communication/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -376,19 +374,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sql">
-<h1>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sql-to-update-a-column-from-another-table">
-<h2>SQL to update a column from another table<a class="headerlink" href="#sql-to-update-a-column-from-another-table" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>UPDATE</dt>
-<dd>Sales_Import SI,
-RetrieveAccountNumber RAN</dd>
-<dt>SET</dt>
-<dd>SI.AccountNumber = RAN.AccountNumber</dd>
-<dt>WHERE</dt>
-<dd>SI.LeadID = RAN.LeadID;</dd>
-</dl>
+  <div class="section" id="communication">
+<h1>Communication<a class="headerlink" href="#communication" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="business-communication-ritx-skills101x-edx">
+<h2>Business Communication: RITx: SKILLS101x (edX)<a class="headerlink" href="#business-communication-ritx-skills101x-edx" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="learn">
+<h2>Learn<a class="headerlink" href="#learn" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>How to critically evaluate your role in workplace interactions</li>
+<li>How to employ strategies for active listening</li>
+<li>How to ask questions that move conversations forward</li>
+</ul>
 </div>
 </div>
 
@@ -400,10 +397,10 @@ RetrieveAccountNumber RAN</dd>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="plsql.html" class="btn btn-neutral float-right" title="PL/SQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../code-design/index.html" class="btn btn-neutral float-right" title="Code Design" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dba.html" class="btn btn-neutral" title="DBA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../asp.net-webforms/code-blocks.html" class="btn btn-neutral" title="Code Blocks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -101,7 +101,6 @@ mustRunAfter
 Include jars from local directory
 ---------------------------------
 
-..code:: groovy
-  
-  compile fileTree(dir: 'libs' include: ['*.jar'])
-
+.. code:: groovy
+   
+   compile fileTree(dir: 'libs' include: ['*.jar'])
