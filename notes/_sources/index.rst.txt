@@ -5,6 +5,7 @@ My Scribblings's
 .. toctree::
    :maxdepth: 1
 
+   resources/index.rst
    asp.net-webforms/index.rst
    business-communication/index.rst
    code-design/index.rst
