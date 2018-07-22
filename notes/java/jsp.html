@@ -101,7 +101,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker</a><ul>
@@ -181,7 +189,8 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Java Server Pages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#jsp">JSP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jsp">JSP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#page-directive">page directive</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#import-classes-in-jsp">Import classes in JSP</a></li>
 </ul>
 </li>
@@ -194,6 +203,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#empty-operator-003">empty operator </a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#el-not-being-evaluated">EL not being evaluated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#templating-using-tag-files">Templating using Tag files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -393,6 +404,20 @@
 <h1>Java Server Pages<a class="headerlink" href="#java-server-pages" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="jsp">
 <h2>JSP<a class="headerlink" href="#jsp" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="page-directive">
+<h2>page directive<a class="headerlink" href="#page-directive" title="Permalink to this headline">¶</a></h2>
+<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Set</span> <span class="n">encoding</span> <span class="n">of</span> <span class="n">the</span> <span class="n">response</span>
+<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">contentType</span><span class="o">=</span><span class="s2">&quot;text/html; charset=UTF-8&quot;</span> <span class="o">%&gt;</span>
+
+<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">errorPage</span><span class="o">=</span><span class="s2">&quot;errorpage.jsp&quot;</span> <span class="o">%&gt;</span>
+
+<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">isErrorPage</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="o">%&gt;</span>
+
+<span class="o">//</span> <span class="n">To</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">source</span> <span class="n">encoding</span> <span class="n">of</span> <span class="n">the</span> <span class="n">page</span> <span class="n">itself</span>
+<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">pageEncoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">%&gt;</span>
+</pre></div>
+</div>
 <div class="section" id="import-classes-in-jsp">
 <h3>Import classes in JSP<a class="headerlink" href="#import-classes-in-jsp" title="Permalink to this headline">¶</a></h3>
 <div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">import</span><span class="o">=</span><span class="s2">&quot;java.util.List&quot;</span> <span class="o">%&gt;</span>
@@ -481,6 +506,47 @@
 <li>Otherwise return <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
 </ul>
 </div>
+</div>
+<div class="section" id="el-not-being-evaluated">
+<h2>EL not being evaluated<a class="headerlink" href="#el-not-being-evaluated" title="Permalink to this headline">¶</a></h2>
+<p>If Expression Languages is not being evaluated and getting the same expression. Need to set <code class="docutils literal notranslate"><span class="pre">isELIgnored=&quot;false&quot;</span></code></p>
+<p>This can be set at page level or in web.xml for entire web application.</p>
+</div>
+<div class="section" id="templating-using-tag-files">
+<h2>Templating using Tag files<a class="headerlink" href="#templating-using-tag-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>Tag declaration</strong></p>
+<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;%@</span> <span class="n">taglib</span> <span class="n">tagdir</span><span class="o">=</span><span class="s2">&quot;/WEB-INF/tags/my&quot;</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;my&quot;</span> <span class="o">%&gt;</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">my</span></code> can be whatever you want</p>
+<p><strong>Tag structure</strong></p>
+<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">prefix</span><span class="p">:</span><span class="n">name</span> <span class="p">[</span><span class="n">attribute</span><span class="o">=</span><span class="n">value</span><span class="p">]</span> <span class="o">...</span> <span class="o">/&gt;</span>
+
+<span class="o">&lt;%</span> <span class="o">--</span> <span class="n">OR</span> <span class="o">--%&gt;</span>
+
+<span class="o">&lt;</span><span class="n">prefix</span><span class="p">:</span><span class="n">name</span> <span class="p">[</span><span class="n">attribute</span><span class="o">=</span><span class="n">value</span><span class="p">]</span> <span class="o">...</span> <span class="o">/&gt;</span>
+
+<span class="o">//</span> <span class="n">Any</span> <span class="n">body</span> <span class="n">element</span> <span class="n">nested</span> <span class="n">within</span> <span class="n">the</span> <span class="n">tag</span>
+
+<span class="o">&lt;/</span><span class="n">prefix</span><span class="p">:</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">prefix</span></code> is user assigned namespace</p>
+<ul class="simple">
+<li>Tag files need to have suffix/extension <code class="docutils literal notranslate"><span class="pre">.tag</span></code></li>
+<li>Can only be placed in <code class="docutils literal notranslate"><span class="pre">/WEB-INF/tags/</span></code></li>
+<li>TLD is not mandatory for tag files. But, are recommended</li>
+<li>if the tag file name is <code class="docutils literal notranslate"><span class="pre">userdetail.tag</span></code> then the tag name is <code class="docutils literal notranslate"><span class="pre">userdetail</span></code></li>
+<li>request, session, application had same scope as the page invocking the tag</li>
+<li>A fresh, clean page scope is setup for each invocation of the tag, and does not affect the invoking JSP page</li>
+</ul>
+<p>example:</p>
+<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;%@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;my&quot;</span> <span class="n">tagdir</span><span class="o">=</span><span class="s2">&quot;/WEB-INF/tags/m&quot;</span> <span class="o">%&gt;</span>
+
+<span class="o">&lt;</span><span class="n">my</span><span class="p">:</span><span class="n">sample</span> <span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>Here <code class="docutils literal notranslate"><span class="pre">&lt;my:sample</span> <span class="pre">/&gt;</span></code> refers to <code class="docutils literal notranslate"><span class="pre">/WEB-INF/tags/m/sample.tag</span></code></p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>

@@ -5,6 +5,22 @@ Java Server Pages
 JSP
 ===
 
+page directive
+==============
+
+.. code:: jsp
+   
+   // Set encoding of the response
+   <%@ page contentType="text/html; charset=UTF-8" %>
+
+   <%@ page errorPage="errorpage.jsp" %>
+
+   <%@ page isErrorPage="true" %>
+
+   // To set the source encoding of the page itself
+   <%@ page pageEncoding="UTF-8" %>
+
+
 Import classes in JSP
 ---------------------
 
@@ -103,6 +119,58 @@ To evaluate ``empty A``
 * Otherwise, if ``A`` is an empty ``Map`, return ``true``
 * Otherwise, if ``A`` is an empty ``Collection``, return ``true``
 * Otherwise return ``false``
+
+EL not being evaluated
+======================
+
+If Expression Languages is not being evaluated and getting the same expression. Need to set ``isELIgnored="false"``
+
+This can be set at page level or in web.xml for entire web application.
+
+Templating using Tag files
+==========================
+
+**Tag declaration**
+
+.. code:: jsp
+   
+   <%@ taglib tagdir="/WEB-INF/tags/my" prefix="my" %>
+
+Here ``my`` can be whatever you want
+
+**Tag structure**
+
+.. code:: jsp
+   
+   <prefix:name [attribute=value] ... />
+
+   <% -- OR --%>
+
+   <prefix:name [attribute=value] ... />
+
+   // Any body element nested within the tag
+
+   </prefix:name>
+
+Here ``prefix`` is user assigned namespace
+
+* Tag files need to have suffix/extension ``.tag``
+* Can only be placed in ``/WEB-INF/tags/``
+* TLD is not mandatory for tag files. But, are recommended
+* if the tag file name is ``userdetail.tag`` then the tag name is ``userdetail``
+* request, session, application had same scope as the page invocking the tag
+* A fresh, clean page scope is setup for each invocation of the tag, and does not affect the invoking JSP page
+
+example:
+
+.. code:: jsp
+   
+   <%@ taglib prefix="my" tagdir="/WEB-INF/tags/m" %>
+
+   <my:sample />
+
+Here ``<my:sample />`` refers to ``/WEB-INF/tags/m/sample.tag``
+
 
 References
 ==========
