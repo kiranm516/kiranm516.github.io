@@ -72,6 +72,19 @@ Assuming that your branch was created off of master:
 
 If your branch was made off of origin/master, then say origin/master instead of master.
 
+Merge branch as a single commit [005]_
+======================================
+
+.. code:: shell
+   
+   git merge --squash <branch-you-want-to-merge>
+
+   # all changes from the branch will be added
+   # do a commit
+
+   git commit -m "<What is the branch about?>"
+
+
 References
 ==========
 
@@ -79,3 +92,4 @@ References
 .. [002] https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git
 .. [003] https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server
 .. [004] https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch
+.. [005] https://stackoverflow.com/a/3697263/836472

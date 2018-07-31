@@ -15,7 +15,7 @@ Creating & Maintaining Impactful Dashboards
 
 * `Part One <https://jesswhite.co.uk/impactfuldashboardspart1-post/>`_
 * `Part Two <https://jesswhite.co.uk/impactfuldashboardspart2-post/>`_
-* `Part Two <https://jesswhite.co.uk/impactfuldashboardspart3-post/>`_
+* `Part Three <https://jesswhite.co.uk/impactfuldashboardspart3-post/>`_
 
 
 Unit Testing

@@ -134,6 +134,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#rename-local-and-remote-branch-002">Rename local and remote branch </a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-proxy-in-git-003">Set proxy in Git </a></li>
 <li class="toctree-l2"><a class="reference internal" href="#git-log-filter-by-branch-004">Git log filter by branch </a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merge-branch-as-a-single-commit-005">Merge branch as a single commit </a></li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -409,7 +410,7 @@
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="deleting-all-previous-commits-in-git-001">
-<h2>Deleting all previous commits in Git <a class="footnote-reference" href="#id5" id="id1">[001]</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
+<h2>Deleting all previous commits in Git <a class="footnote-reference" href="#id6" id="id1">[001]</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
 <p>Deleting the .git folder may cause problems in your git repository. If you want to delete all your commit history but keep the code in its current state, it is very safe to do it as in the following:</p>
 <div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">latest_branch</span>
 <span class="c1"># Add all the files</span>
@@ -427,7 +428,7 @@
 </div>
 </div>
 <div class="section" id="rename-local-and-remote-branch-002">
-<h2>Rename local and remote branch <a class="footnote-reference" href="#id6" id="id2">[002]</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
+<h2>Rename local and remote branch <a class="footnote-reference" href="#id7" id="id2">[002]</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
 <div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the branch locally</span>
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">old</span><span class="o">-</span><span class="n">name</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
 
@@ -441,7 +442,7 @@
 </div>
 </div>
 <div class="section" id="set-proxy-in-git-003">
-<h2>Set proxy in Git <a class="footnote-reference" href="#id7" id="id3">[003]</a><a class="headerlink" href="#set-proxy-in-git-003" title="Permalink to this headline">¶</a></h2>
+<h2>Set proxy in Git <a class="footnote-reference" href="#id8" id="id3">[003]</a><a class="headerlink" href="#set-proxy-in-git-003" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">http.proxy</span> <span class="pre">http://proxyuser:proxypwd&#64;proxy.server.com:8080</span></code></p>
 <ul class="simple">
 <li>change proxyuser to your proxy user</li>
@@ -456,7 +457,7 @@
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">--get</span> <span class="pre">http.proxy</span></code></p>
 </div>
 <div class="section" id="git-log-filter-by-branch-004">
-<h2>Git log filter by branch <a class="footnote-reference" href="#id8" id="id4">[004]</a><a class="headerlink" href="#git-log-filter-by-branch-004" title="Permalink to this headline">¶</a></h2>
+<h2>Git log filter by branch <a class="footnote-reference" href="#id9" id="id4">[004]</a><a class="headerlink" href="#git-log-filter-by-branch-004" title="Permalink to this headline">¶</a></h2>
 <p>Assuming that your branch was created off of master:</p>
 <div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span> <span class="o">-</span><span class="n">v</span> <span class="n">master</span>
 
@@ -467,30 +468,47 @@
 </div>
 <p>If your branch was made off of origin/master, then say origin/master instead of master.</p>
 </div>
+<div class="section" id="merge-branch-as-a-single-commit-005">
+<h2>Merge branch as a single commit <a class="footnote-reference" href="#id10" id="id5">[005]</a><a class="headerlink" href="#merge-branch-as-a-single-commit-005" title="Permalink to this headline">¶</a></h2>
+<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">squash</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">want</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">merge</span><span class="o">&gt;</span>
+
+<span class="c1"># all changes from the branch will be added</span>
+<span class="c1"># do a commit</span>
+
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;&lt;What is the branch about?&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[002]</a></td><td><a class="reference external" href="https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git">https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id3">[003]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
+<table class="docutils footnote" frame="void" id="id9" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id4">[004]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch">https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[005]</a></td><td><a class="reference external" href="https://stackoverflow.com/a/3697263/836472">https://stackoverflow.com/a/3697263/836472</a></td></tr>
 </tbody>
 </table>
 </div>
