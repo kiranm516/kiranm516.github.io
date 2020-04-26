@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -414,18 +414,20 @@
 <div class="section" id="user-stories">
 <h2>User Stories<a class="headerlink" href="#user-stories" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>Role-Goal-Benefit<ul>
-<li>Role: Describle a specific role</li>
-<li>Goal: An achievable goal</li>
-<li>Benefit: The value that the goal might hold</li>
-<li>Role can be non-human entities</li>
+<li><p>Role-Goal-Benefit</p>
+<ul class="simple">
+<li><p>Role: Describle a specific role</p></li>
+<li><p>Goal: An achievable goal</p></li>
+<li><p>Benefit: The value that the goal might hold</p></li>
+<li><p>Role can be non-human entities</p></li>
 </ul>
 </li>
-<li>Limitations</li>
-<li>Definition of Done</li>
-<li>Engineering Tasks</li>
-<li>Effort Estimate<ul>
-<li>Should be within an iteration e.g., 2 weeks in Scrum</li>
+<li><p>Limitations</p></li>
+<li><p>Definition of Done</p></li>
+<li><p>Engineering Tasks</p></li>
+<li><p>Effort Estimate</p>
+<ul class="simple">
+<li><p>Should be within an iteration e.g., 2 weeks in Scrum</p></li>
 </ul>
 </li>
 </ol>
@@ -433,28 +435,29 @@
 <p>As clear as possible, without ambiguities</p>
 <p><strong>INVEST</strong></p>
 <ul class="simple">
-<li>I - Independence<ul>
-<li>All user stories should be independent of each other</li>
+<li><p>I - Independence</p>
+<ul>
+<li><p>All user stories should be independent of each other</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li>N - Negotiable</li>
-<li>V - Valueable</li>
-<li>E - Estimable</li>
-<li>S - Small</li>
-<li>T - Testability</li>
+<li><p>N - Negotiable</p></li>
+<li><p>V - Valueable</p></li>
+<li><p>E - Estimable</p></li>
+<li><p>S - Small</p></li>
+<li><p>T - Testability</p></li>
 </ul>
 <p>Consider the following value statement in the context of a user story for developing a data analysis system:</p>
 <p>‘As a quantitative researcher, I want to be able to calculate the correlation between two variables, so that I can determine how correlated these variables are.’</p>
 <p>Which INVEST guideline is most violated by this user story?</p>
 <ul class="simple">
-<li>Independent</li>
-<li>Negotiable</li>
-<li>Valuable correct</li>
-<li>Estimable</li>
-<li>Small</li>
-<li>Testable</li>
+<li><p>Independent</p></li>
+<li><p>Negotiable</p></li>
+<li><p>Valuable correct</p></li>
+<li><p>Estimable</p></li>
+<li><p>Small</p></li>
+<li><p>Testable</p></li>
 </ul>
 <p>The benefit in this value statement is simply repeating the goal, and therefore violates the principle of a user story being <em>Valuable</em>. A better value statement would have included the benefit of determining correlation between two variables</p>
 <div class="section" id="example">
@@ -467,20 +470,18 @@ Benefit - Students can work</p>
 Definition of done:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Runnable as single command</li>
-<li>Automated test cases</li>
-<li>Programmatically verifiable</li>
+<li><p>Runnable as single command</p></li>
+<li><p>Automated test cases</p></li>
+<li><p>Programmatically verifiable</p></li>
 </ul>
 </div></blockquote>
-<dl class="docutils">
-<dt>Engineering notes:</dt>
-<dd><ul class="first last simple">
-<li>Should use GitHubManager class</li>
+<dl class="simple">
+<dt>Engineering notes:</dt><dd><ul class="simple">
+<li><p>Should use GitHubManager class</p></li>
 </ul>
 </dd>
-<dt>Cost estimate:</dt>
-<dd><ul class="first last simple">
-<li>1.5 units/days</li>
+<dt>Cost estimate:</dt><dd><ul class="simple">
+<li><p>1.5 units/days</p></li>
 </ul>
 </dd>
 </dl>
@@ -495,17 +496,17 @@ Notes: Use existing Level class
 Cost: 3</p>
 <blockquote>
 <div><ul class="simple">
-<li>+1 - Key Control</li>
-<li>+1 - Handling movement</li>
-<li>+1 - Handling collissions</li>
+<li><p>+1 - Key Control</p></li>
+<li><p>+1 - Handling movement</p></li>
+<li><p>+1 - Handling collissions</p></li>
 </ul>
 </div></blockquote>
 <p>DOD:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Key input controls mario’s movement</li>
-<li>Mario is able to move through the level</li>
-<li>When mario colides enemey, one of them should be hit</li>
+<li><p>Key input controls mario’s movement</p></li>
+<li><p>Mario is able to move through the level</p></li>
+<li><p>When mario colides enemey, one of them should be hit</p></li>
 </ul>
 </div></blockquote>
 <p>I: Independent  - NO
@@ -515,22 +516,22 @@ E: Estimable    - YES
 S: Small        - NO
 T: Testable     - YES</p>
 <ol class="arabic simple">
-<li>Find entities that can be decompose</li>
-<li>Link the entities decomposed</li>
-<li>Find the actions involved; bind actions</li>
-<li>Prototype</li>
-<li>Formalize; like UML</li>
-<li>Start implementation</li>
+<li><p>Find entities that can be decompose</p></li>
+<li><p>Link the entities decomposed</p></li>
+<li><p>Find the actions involved; bind actions</p></li>
+<li><p>Prototype</p></li>
+<li><p>Formalize; like UML</p></li>
+<li><p>Start implementation</p></li>
 </ol>
-<dl class="docutils">
-<dt>Entities can be found in Defintion of Done</dt>
-<dd>Key, Mario, Level, Enemies</dd>
-<dt>Both mario and enimies are both figures</dt>
-<dd>Key
+<dl class="simple">
+<dt>Entities can be found in Defintion of Done</dt><dd><p>Key, Mario, Level, Enemies</p>
+</dd>
+<dt>Both mario and enimies are both figures</dt><dd><p>Key
 Level
 Figure
 Mario
-Enemy</dd>
+Enemy</p>
+</dd>
 </dl>
 </div>
 </div>
@@ -588,6 +589,7 @@ Enemy</dd>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

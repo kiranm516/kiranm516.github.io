@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -417,23 +417,23 @@
 - Declaration (optional)</p>
 <blockquote>
 <div><ul class="simple">
-<li>Allows variables, types, procedures and functions to be defined for use within the block</li>
+<li><p>Allows variables, types, procedures and functions to be defined for use within the block</p></li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>Executable</li>
-<li>Exception (optional)</li>
+<li><p>Executable</p></li>
+<li><p>Exception (optional)</p></li>
 </ul>
-<div class="code sql highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">DECLARE</span> <span class="o">--</span><span class="n">declarations</span><span class="p">]</span>
-<span class="o">--</span> <span class="n">declare</span> <span class="nb">any</span> <span class="n">local</span> <span class="n">variabled</span>
-<span class="n">BEGIN</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="k">DECLARE</span> <span class="c1">--declarations]</span>
+<span class="c1">-- declare any local variabled</span>
+<span class="k">BEGIN</span>
 
-     <span class="o">--</span> <span class="n">statements</span>
+     <span class="c1">-- statements</span>
 
-<span class="p">[</span><span class="n">EXCEPTION</span> <span class="o">--</span> <span class="n">handlers</span><span class="p">]</span>
-<span class="o">--</span> <span class="n">handle</span> <span class="n">exceptions</span>
+<span class="p">[</span><span class="k">EXCEPTION</span> <span class="c1">-- handlers]</span>
+<span class="c1">-- handle exceptions</span>
 
-<span class="n">END</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -442,7 +442,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">PL/SQL:</span> <span class="pre">ORA-00904:</span> <span class="pre">:</span> <span class="pre">invalid</span> <span class="pre">identifier</span>
 <span class="pre">PLS-00231:</span> <span class="pre">function</span> <span class="pre">'GET_RATIO_NAME'</span> <span class="pre">may</span> <span class="pre">not</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">in</span> <span class="pre">SQL</span></code></p>
 <ul class="simple">
-<li>For using function in a SQL statement in a stored procedure in a package. It need to be declared in the package specification</li>
+<li><p>For using function in a SQL statement in a stored procedure in a package. It need to be declared in the package specification</p></li>
 </ul>
 </div>
 </div>
@@ -499,6 +499,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -416,23 +416,23 @@
 </div>
 <div class="section" id="page-directive">
 <h2>page directive<a class="headerlink" href="#page-directive" title="Permalink to this headline">¶</a></h2>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">Set</span> <span class="n">encoding</span> <span class="n">of</span> <span class="n">the</span> <span class="n">response</span>
-<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">contentType</span><span class="o">=</span><span class="s2">&quot;text/html; charset=UTF-8&quot;</span> <span class="o">%&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span>// Set encoding of the response
+<span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span> <span class="k">%&gt;</span>
 
-<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">errorPage</span><span class="o">=</span><span class="s2">&quot;errorpage.jsp&quot;</span> <span class="o">%&gt;</span>
+<span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">errorPage</span><span class="o">=</span><span class="s">&quot;errorpage.jsp&quot;</span> <span class="k">%&gt;</span>
 
-<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">isErrorPage</span><span class="o">=</span><span class="s2">&quot;true&quot;</span> <span class="o">%&gt;</span>
+<span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">isErrorPage</span><span class="o">=</span><span class="s">&quot;true&quot;</span> <span class="k">%&gt;</span>
 
-<span class="o">//</span> <span class="n">To</span> <span class="nb">set</span> <span class="n">the</span> <span class="n">source</span> <span class="n">encoding</span> <span class="n">of</span> <span class="n">the</span> <span class="n">page</span> <span class="n">itself</span>
-<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">pageEncoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span> <span class="o">%&gt;</span>
+// To set the source encoding of the page itself
+<span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span> <span class="k">%&gt;</span>
 </pre></div>
 </div>
 <div class="section" id="import-classes-in-jsp">
 <h3>Import classes in JSP<a class="headerlink" href="#import-classes-in-jsp" title="Permalink to this headline">¶</a></h3>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">import</span><span class="o">=</span><span class="s2">&quot;java.util.List&quot;</span> <span class="o">%&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.List&quot;</span> <span class="k">%&gt;</span>
 
-<span class="o">&lt;%--</span> <span class="n">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">multiple</span> <span class="n">classes</span> <span class="o">--%&gt;</span>
-<span class="o">&lt;%@</span> <span class="n">page</span> <span class="n">import</span><span class="o">=</span><span class="s2">&quot;package1.myClass1,package2.myClass2,....,packageN.myClassN&quot;</span> <span class="o">%&gt;</span>
+<span class="k">&lt;%-</span><span class="o">-</span> <span class="n">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="kn">import</span> <span class="nn">multiple</span> <span class="n">classes</span> <span class="o">--</span><span class="k">%&gt;</span>
+<span class="k">&lt;%@</span> <span class="n">page</span> <span class="n">import</span><span class="o">=</span><span class="s">&quot;package1.myClass1,package2.myClass2,....,packageN.myClassN&quot;</span> <span class="k">%&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -441,78 +441,78 @@
 <h2>JSTL<a class="headerlink" href="#jstl" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="if">
 <h3>if<a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;c:if test=&quot;${empty someFlag}&quot;&gt;
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${empty someFlag}&quot;</span><span class="nt">&gt;</span>
  ...
-&lt;/c:if&gt;
+<span class="nt">&lt;/c:if&gt;</span>
 
-&lt;!-- not case --&gt;
-&lt;!-- can also be done !empty --&gt;
-&lt;c:if test=&quot;${not empty someFlag}&quot;&gt;
+<span class="c">&lt;!-- not case --&gt;</span>
+<span class="c">&lt;!-- can also be done !empty --&gt;</span>
+<span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${not empty someFlag}&quot;</span><span class="nt">&gt;</span>
  ...
-&lt;/c:if&gt;
+<span class="nt">&lt;/c:if&gt;</span>
 </pre></div>
 </div>
 <p>For testing null and boolean property</p>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;c:if test=&quot;${isDataSet != null &amp;&amp; isDataSet}&quot;&gt;
-   &lt;!-- Do something if isDataSet is available and set to true --&gt;
-&lt;/c:if&gt;
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;c:if</span> <span class="na">test=</span><span class="s">&quot;${isDataSet != null &amp;&amp; isDataSet}&quot;</span><span class="nt">&gt;</span>
+   <span class="c">&lt;!-- Do something if isDataSet is available and set to true --&gt;</span>
+<span class="nt">&lt;/c:if&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="if-else-choose">
 <h3>if else / choose<a class="headerlink" href="#if-else-choose" title="Permalink to this headline">¶</a></h3>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">c</span><span class="p">:</span><span class="n">choose</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">c</span><span class="p">:</span><span class="n">when</span> <span class="n">test</span><span class="o">=</span><span class="s2">&quot;$</span><span class="si">{condition1}</span><span class="s2">&quot;</span><span class="o">&gt;</span>
-    <span class="o">...</span>
-  <span class="o">&lt;/</span><span class="n">c</span><span class="p">:</span><span class="n">when</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">c</span><span class="p">:</span><span class="n">when</span> <span class="n">test</span><span class="o">=</span><span class="s2">&quot;$</span><span class="si">{condition2}</span><span class="s2">&quot;</span><span class="o">&gt;</span>
-    <span class="o">...</span>
-  <span class="o">&lt;/</span><span class="n">c</span><span class="p">:</span><span class="n">when</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">c</span><span class="p">:</span><span class="n">otherwise</span><span class="o">&gt;</span>
-    <span class="o">...</span>
-  <span class="o">&lt;/</span><span class="n">c</span><span class="p">:</span><span class="n">otherwise</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">c</span><span class="p">:</span><span class="n">choose</span><span class="o">&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;c:choose&gt;</span>
+  <span class="nt">&lt;c:when</span> <span class="na">test=</span><span class="s">&quot;${condition1}&quot;</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/c:when&gt;</span>
+  <span class="nt">&lt;c:when</span> <span class="na">test=</span><span class="s">&quot;${condition2}&quot;</span><span class="nt">&gt;</span>
+    ...
+  <span class="nt">&lt;/c:when&gt;</span>
+  <span class="nt">&lt;c:otherwise&gt;</span>
+    ...
+  <span class="nt">&lt;/c:otherwise&gt;</span>
+<span class="nt">&lt;/c:choose&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="conditional-operator">
 <h3>Conditional operator (?)<a class="headerlink" href="#conditional-operator" title="Permalink to this headline">¶</a></h3>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">c</span><span class="p">:</span><span class="n">out</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="o">/&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;c:out</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-index-in-foreach-002">
-<h3>Get index in forEach <a class="footnote-reference" href="#id5" id="id1">[002]</a><a class="headerlink" href="#get-index-in-foreach-002" title="Permalink to this headline">¶</a></h3>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;c:forEach items=&quot;${itemsList}&quot; var=&quot;item&quot;  varStatus=&quot;loop&quot;&gt;
-   &lt;p&gt;Item: ${item} had Index: ${loop.index}&lt;/p&gt;
-&lt;/c:forEach&gt;
+<h3>Get index in forEach <a class="footnote-reference brackets" href="#id5" id="id1">002</a><a class="headerlink" href="#get-index-in-foreach-002" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;c:forEach</span> <span class="na">items=</span><span class="s">&quot;${itemsList}&quot;</span> <span class="na">var=</span><span class="s">&quot;item&quot;</span>  <span class="na">varStatus=</span><span class="s">&quot;loop&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;p&gt;</span>Item: ${item} had Index: ${loop.index}<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/c:forEach&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="iterate-map-001">
-<h3>Iterate Map <a class="footnote-reference" href="#id4" id="id2">[001]</a><a class="headerlink" href="#iterate-map-001" title="Permalink to this headline">¶</a></h3>
+<h3>Iterate Map <a class="footnote-reference brackets" href="#id4" id="id2">001</a><a class="headerlink" href="#iterate-map-001" title="Permalink to this headline">¶</a></h3>
 <p>For accessing Map&lt;Key, Value&gt;</p>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;c:forEach items=&quot;${list}&quot; var=&quot;map&quot;&gt;
-   &lt;c:forEach items=&quot;${map}&quot; var=&quot;entry&quot;&gt;
-     Key: ${entry.key}&lt;br&gt;
-     Value: ${entry.value}&lt;br&gt;
-   &lt;/c:forEach&gt;
-&lt;/c:forEach&gt;
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;c:forEach</span> <span class="na">items=</span><span class="s">&quot;${list}&quot;</span> <span class="na">var=</span><span class="s">&quot;map&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;c:forEach</span> <span class="na">items=</span><span class="s">&quot;${map}&quot;</span> <span class="na">var=</span><span class="s">&quot;entry&quot;</span><span class="nt">&gt;</span>
+     Key: ${entry.key}<span class="nt">&lt;br&gt;</span>
+     Value: ${entry.value}<span class="nt">&lt;br&gt;</span>
+   <span class="nt">&lt;/c:forEach&gt;</span>
+<span class="nt">&lt;/c:forEach&gt;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="empty-operator-003">
-<h3>empty operator <a class="footnote-reference" href="#id6" id="id3">[003]</a><a class="headerlink" href="#empty-operator-003" title="Permalink to this headline">¶</a></h3>
+<h3>empty operator <a class="footnote-reference brackets" href="#id6" id="id3">003</a><a class="headerlink" href="#empty-operator-003" title="Permalink to this headline">¶</a></h3>
 <p><strong>1.10 Empty Operator - empty A</strong></p>
 <p>The empty operator is a prefix operator that can be used to determine if a value is null or empty.</p>
 <p>To evaluate <code class="docutils literal notranslate"><span class="pre">empty</span> <span class="pre">A</span></code></p>
 <ul class="simple">
-<li>If A is null, return true</li>
-<li>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is the empty <code class="docutils literal notranslate"><span class="pre">string</span></code>, then return <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
-<li>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is an empty <code class="docutils literal notranslate"><span class="pre">array</span></code>, then return <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
-<li>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is an empty <code class="docutils literal notranslate"><span class="pre">Map`,</span> <span class="pre">return</span> <span class="pre">``true</span></code></li>
-<li>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is an empty <code class="docutils literal notranslate"><span class="pre">Collection</span></code>, return <code class="docutils literal notranslate"><span class="pre">true</span></code></li>
-<li>Otherwise return <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
+<li><p>If A is null, return true</p></li>
+<li><p>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is the empty <code class="docutils literal notranslate"><span class="pre">string</span></code>, then return <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+<li><p>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is an empty <code class="docutils literal notranslate"><span class="pre">array</span></code>, then return <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+<li><p>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is an empty <code class="docutils literal notranslate"><span class="pre">Map`,</span> <span class="pre">return</span> <span class="pre">``true</span></code></p></li>
+<li><p>Otherwise, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is an empty <code class="docutils literal notranslate"><span class="pre">Collection</span></code>, return <code class="docutils literal notranslate"><span class="pre">true</span></code></p></li>
+<li><p>Otherwise return <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
 </ul>
 </div>
 </div>
@@ -524,59 +524,52 @@
 <div class="section" id="templating-using-tag-files">
 <h2>Templating using Tag files<a class="headerlink" href="#templating-using-tag-files" title="Permalink to this headline">¶</a></h2>
 <p><strong>Tag declaration</strong></p>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;%@</span> <span class="n">taglib</span> <span class="n">tagdir</span><span class="o">=</span><span class="s2">&quot;/WEB-INF/tags/my&quot;</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;my&quot;</span> <span class="o">%&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;%@</span> <span class="n">taglib</span> <span class="n">tagdir</span><span class="o">=</span><span class="s">&quot;/WEB-INF/tags/my&quot;</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;my&quot;</span> <span class="k">%&gt;</span>
 </pre></div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">my</span></code> can be whatever you want</p>
 <p><strong>Tag structure</strong></p>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">prefix</span><span class="p">:</span><span class="n">name</span> <span class="p">[</span><span class="n">attribute</span><span class="o">=</span><span class="n">value</span><span class="p">]</span> <span class="o">...</span> <span class="o">/&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span>&lt;prefix:name [attribute=value] ... /&gt;
 
-<span class="o">&lt;%</span> <span class="o">--</span> <span class="n">OR</span> <span class="o">--%&gt;</span>
+&lt;% -- OR --%&gt;
 
-<span class="o">&lt;</span><span class="n">prefix</span><span class="p">:</span><span class="n">name</span> <span class="p">[</span><span class="n">attribute</span><span class="o">=</span><span class="n">value</span><span class="p">]</span> <span class="o">...</span> <span class="o">/&gt;</span>
+&lt;prefix:name [attribute=value] ... /&gt;
 
-<span class="o">//</span> <span class="n">Any</span> <span class="n">body</span> <span class="n">element</span> <span class="n">nested</span> <span class="n">within</span> <span class="n">the</span> <span class="n">tag</span>
+// Any body element nested within the tag
 
-<span class="o">&lt;/</span><span class="n">prefix</span><span class="p">:</span><span class="n">name</span><span class="o">&gt;</span>
+&lt;/prefix:name&gt;
 </pre></div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">prefix</span></code> is user assigned namespace</p>
 <ul class="simple">
-<li>Tag files need to have suffix/extension <code class="docutils literal notranslate"><span class="pre">.tag</span></code></li>
-<li>Can only be placed in <code class="docutils literal notranslate"><span class="pre">/WEB-INF/tags/</span></code></li>
-<li>TLD is not mandatory for tag files. But, are recommended</li>
-<li>if the tag file name is <code class="docutils literal notranslate"><span class="pre">userdetail.tag</span></code> then the tag name is <code class="docutils literal notranslate"><span class="pre">userdetail</span></code></li>
-<li>request, session, application had same scope as the page invocking the tag</li>
-<li>A fresh, clean page scope is setup for each invocation of the tag, and does not affect the invoking JSP page</li>
+<li><p>Tag files need to have suffix/extension <code class="docutils literal notranslate"><span class="pre">.tag</span></code></p></li>
+<li><p>Can only be placed in <code class="docutils literal notranslate"><span class="pre">/WEB-INF/tags/</span></code></p></li>
+<li><p>TLD is not mandatory for tag files. But, are recommended</p></li>
+<li><p>if the tag file name is <code class="docutils literal notranslate"><span class="pre">userdetail.tag</span></code> then the tag name is <code class="docutils literal notranslate"><span class="pre">userdetail</span></code></p></li>
+<li><p>request, session, application had same scope as the page invocking the tag</p></li>
+<li><p>A fresh, clean page scope is setup for each invocation of the tag, and does not affect the invoking JSP page</p></li>
 </ul>
 <p>example:</p>
-<div class="code jsp highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;%@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;my&quot;</span> <span class="n">tagdir</span><span class="o">=</span><span class="s2">&quot;/WEB-INF/tags/m&quot;</span> <span class="o">%&gt;</span>
+<div class="highlight-jsp notranslate"><div class="highlight"><pre><span></span><span class="k">&lt;%@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">&quot;my&quot;</span> <span class="n">tagdir</span><span class="o">=</span><span class="s">&quot;/WEB-INF/tags/m&quot;</span> <span class="k">%&gt;</span>
 
-<span class="o">&lt;</span><span class="n">my</span><span class="p">:</span><span class="n">sample</span> <span class="o">/&gt;</span>
+<span class="nt">&lt;my:sample</span> <span class="nt">/&gt;</span>
 </pre></div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">&lt;my:sample</span> <span class="pre">/&gt;</span></code> refers to <code class="docutils literal notranslate"><span class="pre">/WEB-INF/tags/m/sample.tag</span></code></p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/2148658/iterate-over-elements-of-list-and-map-using-jstl-cforeach-tag">https://stackoverflow.com/questions/2148658/iterate-over-elements-of-list-and-map-using-jstl-cforeach-tag</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[002]</a></td><td><a class="reference external" href="http://www.bmchild.com/2012/03/jstl-cforeach-varstatus-properties.html">http://www.bmchild.com/2012/03/jstl-cforeach-varstatus-properties.html</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[003]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/14185031/how-does-el-empty-operator-work-in-jsf/">https://stackoverflow.com/questions/14185031/how-does-el-empty-operator-work-in-jsf/</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">001</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/2148658/iterate-over-elements-of-list-and-map-using-jstl-cforeach-tag">https://stackoverflow.com/questions/2148658/iterate-over-elements-of-list-and-map-using-jstl-cforeach-tag</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">002</a></span></dt>
+<dd><p><a class="reference external" href="http://www.bmchild.com/2012/03/jstl-cforeach-varstatus-properties.html">http://www.bmchild.com/2012/03/jstl-cforeach-varstatus-properties.html</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">003</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/14185031/how-does-el-empty-operator-work-in-jsf/">https://stackoverflow.com/questions/14185031/how-does-el-empty-operator-work-in-jsf/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -632,6 +625,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

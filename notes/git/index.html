@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -410,45 +410,45 @@
   <div class="section" id="git">
 <h1>Git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="deleting-all-previous-commits-in-git-001">
-<h2>Deleting all previous commits in Git <a class="footnote-reference" href="#id6" id="id1">[001]</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
+<h2>Deleting all previous commits in Git <a class="footnote-reference brackets" href="#id6" id="id1">001</a><a class="headerlink" href="#deleting-all-previous-commits-in-git-001" title="Permalink to this headline">¶</a></h2>
 <p>Deleting the .git folder may cause problems in your git repository. If you want to delete all your commit history but keep the code in its current state, it is very safe to do it as in the following:</p>
-<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">--</span><span class="n">orphan</span> <span class="n">latest_branch</span>
-<span class="c1"># Add all the files</span>
-<span class="n">git</span> <span class="n">add</span> <span class="o">-</span><span class="n">A</span>
-<span class="n">Commit</span> <span class="n">the</span> <span class="n">changes</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s2">&quot;commit message&quot;</span>
-<span class="n">Delete</span> <span class="n">the</span> <span class="n">branch</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">master</span>
-<span class="n">Rename</span> <span class="n">the</span> <span class="n">current</span> <span class="n">branch</span> <span class="n">to</span> <span class="n">master</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">master</span>
-<span class="n">Finally</span><span class="p">,</span> <span class="n">force</span> <span class="n">update</span> <span class="n">your</span> <span class="n">repository</span>
-<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">f</span> <span class="n">origin</span> <span class="n">master</span>
-<span class="n">PS</span><span class="p">:</span> <span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">keep</span> <span class="n">your</span> <span class="n">old</span> <span class="n">commit</span> <span class="n">history</span> <span class="n">around</span>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>git checkout --orphan latest_branch
+# Add all the files
+git add -A
+Commit the changes
+git commit -am <span class="s2">&quot;commit message&quot;</span>
+Delete the branch
+git branch -D master
+<span class="k">Rename</span> the current branch to master
+git branch -m master
+Finally, force update your repository
+git push -f origin master
+PS: this will not keep your old commit history around
 </pre></div>
 </div>
 </div>
 <div class="section" id="rename-local-and-remote-branch-002">
-<h2>Rename local and remote branch <a class="footnote-reference" href="#id7" id="id2">[002]</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
-<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the branch locally</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">m</span> <span class="n">old</span><span class="o">-</span><span class="n">name</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
+<h2>Rename local and remote branch <a class="footnote-reference brackets" href="#id7" id="id2">002</a><a class="headerlink" href="#rename-local-and-remote-branch-002" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span># Rename the branch locally
+git branch -m old-name new-name
 
-<span class="c1"># Delete the old-name remote branch and push the new-name local branch</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="p">:</span><span class="n">old</span><span class="o">-</span><span class="n">name</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
+# Delete the old-name remote branch and push the new-name local branch
+git push origin :old-name new-name
 
-<span class="c1"># Reset the upstream branch for the new-name local branch</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">-</span><span class="n">u</span> <span class="n">new</span><span class="o">-</span><span class="n">name</span>
+# Reset the upstream branch for the new-name local branch
+git checkout new-name
+git push origin -u new-name
 </pre></div>
 </div>
 </div>
 <div class="section" id="set-proxy-in-git-003">
-<h2>Set proxy in Git <a class="footnote-reference" href="#id8" id="id3">[003]</a><a class="headerlink" href="#set-proxy-in-git-003" title="Permalink to this headline">¶</a></h2>
+<h2>Set proxy in Git <a class="footnote-reference brackets" href="#id8" id="id3">003</a><a class="headerlink" href="#set-proxy-in-git-003" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">http.proxy</span> <span class="pre">http://proxyuser:proxypwd&#64;proxy.server.com:8080</span></code></p>
 <ul class="simple">
-<li>change proxyuser to your proxy user</li>
-<li>change proxypwd to your proxy password</li>
-<li>change proxy.server.com to the URL of your proxy server</li>
-<li>change 8080 to the proxy port configured on your proxy server</li>
+<li><p>change proxyuser to your proxy user</p></li>
+<li><p>change proxypwd to your proxy password</p></li>
+<li><p>change proxy.server.com to the URL of your proxy server</p></li>
+<li><p>change 8080 to the proxy port configured on your proxy server</p></li>
 </ul>
 <p>If you decide at any time to reset this proxy and work without proxy:</p>
 <p>Command to use:
@@ -457,60 +457,47 @@
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">--get</span> <span class="pre">http.proxy</span></code></p>
 </div>
 <div class="section" id="git-log-filter-by-branch-004">
-<h2>Git log filter by branch <a class="footnote-reference" href="#id9" id="id4">[004]</a><a class="headerlink" href="#git-log-filter-by-branch-004" title="Permalink to this headline">¶</a></h2>
+<h2>Git log filter by branch <a class="footnote-reference brackets" href="#id9" id="id4">004</a><a class="headerlink" href="#git-log-filter-by-branch-004" title="Permalink to this headline">¶</a></h2>
 <p>Assuming that your branch was created off of master:</p>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">cherry</span> <span class="o">-</span><span class="n">v</span> <span class="n">master</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git cherry -v master
 
 <span class="c1"># or</span>
 
-<span class="n">git</span> <span class="n">log</span> <span class="n">master</span><span class="o">..</span>
+git log master..
 </pre></div>
 </div>
 <p>If your branch was made off of origin/master, then say origin/master instead of master.</p>
 </div>
 <div class="section" id="merge-branch-as-a-single-commit-005">
-<h2>Merge branch as a single commit <a class="footnote-reference" href="#id10" id="id5">[005]</a><a class="headerlink" href="#merge-branch-as-a-single-commit-005" title="Permalink to this headline">¶</a></h2>
-<div class="code shell highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">merge</span> <span class="o">--</span><span class="n">squash</span> <span class="o">&lt;</span><span class="n">branch</span><span class="o">-</span><span class="n">you</span><span class="o">-</span><span class="n">want</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">merge</span><span class="o">&gt;</span>
+<h2>Merge branch as a single commit <a class="footnote-reference brackets" href="#id10" id="id5">005</a><a class="headerlink" href="#merge-branch-as-a-single-commit-005" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git merge --squash &lt;branch-you-want-to-merge&gt;
 
 <span class="c1"># all changes from the branch will be added</span>
 <span class="c1"># do a commit</span>
 
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;&lt;What is the branch about?&gt;&quot;</span>
+git commit -m <span class="s2">&quot;&lt;What is the branch about?&gt;&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[002]</a></td><td><a class="reference external" href="https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git">https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[003]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[004]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch">https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[005]</a></td><td><a class="reference external" href="https://stackoverflow.com/a/3697263/836472">https://stackoverflow.com/a/3697263/836472</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">001</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github">https://stackoverflow.com/questions/13716658/how-to-delete-all-commit-history-in-github</a></p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">002</a></span></dt>
+<dd><p><a class="reference external" href="https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git">https://multiplestates.wordpress.com/2015/02/05/rename-a-local-and-remote-branch-in-git</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">003</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server">https://stackoverflow.com/questions/783811/getting-git-to-work-with-a-proxy-server</a></p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id4">004</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch">https://stackoverflow.com/questions/4649356/how-do-i-run-git-log-to-see-changes-only-for-a-specific-branch</a></p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id5">005</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/a/3697263/836472">https://stackoverflow.com/a/3697263/836472</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -566,6 +553,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

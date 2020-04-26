@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -412,7 +412,7 @@
   <div class="section" id="java-enterprise-edition">
 <h1>Java Enterprise Edition<a class="headerlink" href="#java-enterprise-edition" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="requestdispatcher-forward-vs-httpservletresponse-sendredirect-001-002">
-<h2>RequestDispatcher.forward() vs HttpServletResponse.sendRedirect() <a class="footnote-reference" href="#id3" id="id1">[001]</a> <a class="footnote-reference" href="#id4" id="id2">[002]</a><a class="headerlink" href="#requestdispatcher-forward-vs-httpservletresponse-sendredirect-001-002" title="Permalink to this headline">¶</a></h2>
+<h2>RequestDispatcher.forward() vs HttpServletResponse.sendRedirect() <a class="footnote-reference brackets" href="#id3" id="id1">001</a> <a class="footnote-reference brackets" href="#id4" id="id2">002</a><a class="headerlink" href="#requestdispatcher-forward-vs-httpservletresponse-sendredirect-001-002" title="Permalink to this headline">¶</a></h2>
 <p><strong>requestDispatcher - forward() method</strong></p>
 <p># When we use forward method, request is transfer to other resource within the same server for further processing.
 # In case of forward, web container handle all process internally and client or browser is not involved.
@@ -432,18 +432,14 @@ Its depends upon the scenario that which method is more useful.</p>
 <p>If you want control is transfer to new server or context and it is treated as completely new task then we go for Send Redirect. Generally, forward should be used if the operation can be safely repeated upon a browser reload of the web page will not affect the result.</p>
 <div class="section" id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
-<table class="docutils footnote" frame="void" id="id3" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/2047122/requestdispatcher-forward-vs-httpservletresponse-sendredirect">https://stackoverflow.com/questions/2047122/requestdispatcher-forward-vs-httpservletresponse-sendredirect</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[002]</a></td><td><a class="reference external" href="http://javarevisited.blogspot.in/2011/09/sendredirect-forward-jsp-servlet.html">http://javarevisited.blogspot.in/2011/09/sendredirect-forward-jsp-servlet.html</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">001</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/2047122/requestdispatcher-forward-vs-httpservletresponse-sendredirect">https://stackoverflow.com/questions/2047122/requestdispatcher-forward-vs-httpservletresponse-sendredirect</a></p>
+</dd>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">002</a></span></dt>
+<dd><p><a class="reference external" href="http://javarevisited.blogspot.in/2011/09/sendredirect-forward-jsp-servlet.html">http://javarevisited.blogspot.in/2011/09/sendredirect-forward-jsp-servlet.html</a></p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -500,6 +496,7 @@ Its depends upon the scenario that which method is more useful.</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

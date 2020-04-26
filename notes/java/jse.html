@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -414,11 +414,11 @@
 <div class="section" id="parse-date-string">
 <h2>Parse date string<a class="headerlink" href="#parse-date-string" title="Permalink to this headline">¶</a></h2>
 <p><strong>Java 6</strong></p>
-<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">dateString</span> <span class="o">=</span> <span class="s2">&quot;31/05/2018&quot;</span><span class="p">;</span>
-<span class="n">DateFormat</span> <span class="nb">format</span> <span class="o">=</span> <span class="n">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s2">&quot;dd/MM/yyyy&quot;</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">dateString</span> <span class="o">=</span> <span class="s">&quot;31/05/2018&quot;</span><span class="p">;</span>
+<span class="n">DateFormat</span> <span class="n">format</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="p">(</span><span class="s">&quot;dd/MM/yyyy&quot;</span><span class="p">);</span>
 
-<span class="o">//</span> <span class="n">Parse</span> <span class="n">will</span> <span class="n">throw</span> <span class="n">an</span> <span class="ne">Exception</span>
-<span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="nb">format</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">dateString</span><span class="p">);</span>
+<span class="c1">// Parse will throw an Exception</span>
+<span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="n">format</span><span class="p">.</span><span class="na">parse</span><span class="p">(</span><span class="n">dateString</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -476,6 +476,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

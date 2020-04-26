@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -427,7 +427,7 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 </div>
 <div class="section" id="quite-mode">
 <h3>Quite mode<a class="headerlink" href="#quite-mode" title="Permalink to this headline">¶</a></h3>
-<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="o">-</span><span class="n">q</span>
 </pre></div>
 </div>
 <p>Runs gradle in quite mode so only error messages are shown</p>
@@ -440,54 +440,54 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 <div class="section" id="task">
 <h2>Task<a class="headerlink" href="#task" title="Permalink to this headline">¶</a></h2>
 <p>Task is the central concept to gradle. A project build process have several tasks and it has several other properites</p>
-<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">hello</span> <span class="p">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">hello</span> <span class="o">{</span>
     <span class="n">description</span> <span class="s2">&quot;Task description&quot;</span>
     <span class="n">group</span> <span class="s2">&quot;Task group name&quot;</span>
-    <span class="n">doLast</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="o">{</span>
         <span class="n">println</span> <span class="s2">&quot;Hello, Task!&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <div class="section" id="list-all-tasks">
 <h3>List all tasks<a class="headerlink" href="#list-all-tasks" title="Permalink to this headline">¶</a></h3>
-<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="n">tasks</span> <span class="o">--</span><span class="nb">all</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">gradle</span> <span class="n">tasks</span> <span class="o">--</span><span class="n">all</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="dependson">
 <h3>dependsOn<a class="headerlink" href="#dependson" title="Permalink to this headline">¶</a></h3>
 <p>e.g.,</p>
-<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="p">{</span>
-    <span class="n">doLast</span> <span class="p">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">putOnSocks</span> <span class="o">{</span>
+    <span class="n">doLast</span> <span class="o">{</span>
         <span class="n">println</span> <span class="s2">&quot;Putting on Socks.&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<span class="n">task</span> <span class="n">putOnShoes</span> <span class="p">{</span>
+<span class="n">task</span> <span class="n">putOnShoes</span> <span class="o">{</span>
     <span class="n">dependsOn</span> <span class="s2">&quot;putOnSocks&quot;</span>
-    <span class="n">doLast</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="o">{</span>
         <span class="n">println</span> <span class="s2">&quot;Putting on Shoes.&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="finalizedby">
 <h3>finalizedBy<a class="headerlink" href="#finalizedby" title="Permalink to this headline">¶</a></h3>
 <p>When run eatBreadkFast afterwards brushYourTeeth task is also run</p>
-<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="p">{</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="n">eatBreakFast</span> <span class="o">{</span>
     <span class="n">finalizedBy</span> <span class="s2">&quot;brushYourTeeth&quot;</span>
-    <span class="n">doLast</span> <span class="p">{</span>
+    <span class="n">doLast</span> <span class="o">{</span>
         <span class="n">println</span> <span class="s2">&quot;Eating breakfast&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<span class="n">task</span> <span class="n">brushYourTeeth</span> <span class="p">{</span>
-    <span class="n">doLast</span> <span class="p">{</span>
+<span class="n">task</span> <span class="n">brushYourTeeth</span> <span class="o">{</span>
+    <span class="n">doLast</span> <span class="o">{</span>
         <span class="n">println</span> <span class="s2">&quot;Brushing...&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -496,7 +496,7 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
 </div>
 <div class="section" id="include-jars-from-local-directory">
 <h3>Include jars from local directory<a class="headerlink" href="#include-jars-from-local-directory" title="Permalink to this headline">¶</a></h3>
-<div class="code groovy highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">compile</span> <span class="n">fileTree</span><span class="p">(</span><span class="nb">dir</span><span class="p">:</span> <span class="s1">&#39;libs&#39;</span> <span class="n">include</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;*.jar&#39;</span><span class="p">])</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">compile</span> <span class="nf">fileTree</span><span class="o">(</span><span class="nl">dir:</span> <span class="s1">&#39;libs&#39;</span> <span class="nl">include:</span> <span class="o">[</span><span class="s1">&#39;*.jar&#39;</span><span class="o">])</span>
 </pre></div>
 </div>
 </div>
@@ -555,6 +555,7 @@ For using another script by specifying <cite>-b</cite> flag with the build file 
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -411,26 +411,26 @@
             
   <div class="section" id="code-blocks">
 <h1>Code Blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h1>
-<div class="code aspx-cs highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># output</span>
-<span class="o">&lt;%=</span> <span class="n">DateTime</span><span class="o">.</span><span class="n">Now</span><span class="o">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">%&gt;</span>
-<span class="c1"># this will auto encode html</span>
-<span class="o">&lt;%</span><span class="p">:</span> <span class="n">DateTime</span><span class="o">.</span><span class="n">Now</span><span class="o">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">%&gt;</span>
+<div class="highlight-aspx-cs notranslate"><div class="highlight"><pre><span></span># output
+<span class="nt">&lt;%=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="nt">%&gt;</span>
+# this will auto encode html
+<span class="nt">&lt;%</span><span class="p">:</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="nt">%&gt;</span>
 
-<span class="c1"># code, any valid C# code can be put in there</span>
-<span class="o">&lt;%</span>
+# code, any valid C# code can be put in there
+<span class="nt">&lt;%</span>
     <span class="p">{</span>
-        <span class="n">Response</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">DateTime</span><span class="o">.</span><span class="n">Now</span><span class="o">.</span><span class="n">ToString</span><span class="p">());</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">ToString</span><span class="p">());</span>
     <span class="p">}</span>
-<span class="o">%&gt;</span>
+<span class="nt">%&gt;</span>
 </pre></div>
 </div>
-<div class="code aspx-cs highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># &lt;% ... %&gt;</span>
+<div class="highlight-aspx-cs notranslate"><div class="highlight"><pre><span></span># &lt;% ... %&gt;
 
-<span class="c1"># &lt;%= ... %&gt;</span>
+# &lt;%= ... %&gt;
 
-<span class="c1"># &lt;%# ... %&gt;</span>
+# &lt;%# ... %&gt;
 
-<span class="c1"># &lt;%$ ... %&gt;</span>
+# &lt;%$ ... %&gt;
 </pre></div>
 </div>
 </div>
@@ -487,6 +487,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

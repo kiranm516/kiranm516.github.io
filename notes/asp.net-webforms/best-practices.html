@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -414,8 +414,9 @@
 <div class="section" id="turn-off-viewstate">
 <h2>Turn off ViewState<a class="headerlink" href="#turn-off-viewstate" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Most controls do not require ViewState<ul>
-<li>New techniques allow for controls to manage data without it</li>
+<li><p>Most controls do not require ViewState</p>
+<ul>
+<li><p>New techniques allow for controls to manage data without it</p></li>
 </ul>
 </li>
 </ul>
@@ -423,16 +424,16 @@
 <h3>Disable on Page directive<a class="headerlink" href="#disable-on-page-directive" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;%&#64;</span> <span class="pre">Page</span> <span class="pre">EnableViewState=&quot;false&quot;</span> <span class="pre">%&gt;</span></code></p>
 <p>Disable in web.config</p>
-<dl class="docutils">
-<dt>&lt;system.web&gt;</dt>
-<dd>&lt;pages enableViewState=”false” /&gt;</dd>
+<dl class="simple">
+<dt>&lt;system.web&gt;</dt><dd><p>&lt;pages enableViewState=”false” /&gt;</p>
+</dd>
 </dl>
 <div class="section" id="use-bundles">
 <h4>Use Bundles<a class="headerlink" href="#use-bundles" title="Permalink to this headline">¶</a></h4>
 <p>Use bundles for configuring any javascript or css resources</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">App_Start/BundleConfig.cs</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">/Bundle.config</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">App_Start/BundleConfig.cs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/Bundle.config</span></code></p></li>
 </ul>
 <p>Take all your javascript, css and combine and minifies and serves as one file.
 Benefit is as HTTP has waterfall model where requests are come one by one so all in a single request can make it load all at once</p>
@@ -506,6 +507,7 @@ Benefit is as HTTP has waterfall model where requests are come one by one so all
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

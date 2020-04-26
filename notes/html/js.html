@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -414,21 +414,21 @@
 <div class="section" id="jquery-click-not-working">
 <h2>jQuery click not working<a class="headerlink" href="#jquery-click-not-working" title="Permalink to this headline">¶</a></h2>
 <p>Example</p>
-<div class="code javascript highlight-default notranslate"><div class="highlight"><pre><span></span>$(document).ready(function() {
-    // This WILL work because we are listening on the &#39;document&#39;,
-    // for a click on an element with an ID of #test-element
-    $(document).on(&quot;click&quot;,&quot;#test-element&quot;,function() {
-        alert(&quot;click bound to document listening for #test-element&quot;);
-    });
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// This WILL work because we are listening on the &#39;document&#39;,</span>
+    <span class="c1">// for a click on an element with an ID of #test-element</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="s2">&quot;#test-element&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;click bound to document listening for #test-element&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
 
-    // This will NOT work because there is no &#39;#test-element&#39; ... yet
-    $(&quot;#test-element&quot;).on(&quot;click&quot;,function() {
-        alert(&quot;click bound directly to #test-element&quot;);
-    });
+    <span class="c1">// This will NOT work because there is no &#39;#test-element&#39; ... yet</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#test-element&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;click bound directly to #test-element&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
 
-    // Create the dynamic element &#39;#test-element&#39;
-    $(&#39;body&#39;).append(&#39;&lt;div id=&quot;test-element&quot;&gt;Click mee&lt;/div&gt;&#39;);
-});
+    <span class="c1">// Create the dynamic element &#39;#test-element&#39;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;div id=&quot;test-element&quot;&gt;Click mee&lt;/div&gt;&#39;</span><span class="p">);</span>
+<span class="p">});</span>
 </pre></div>
 </div>
 </div>
@@ -486,6 +486,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

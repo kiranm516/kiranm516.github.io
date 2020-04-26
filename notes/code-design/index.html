@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
@@ -412,28 +412,28 @@
 <div class="section" id="generic">
 <h2>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exception-vs-boolean-cd001">
-<h3>Exception vs Boolean <a class="reference internal" href="#cd001" id="id1">[CD001]</a><a class="headerlink" href="#exception-vs-boolean-cd001" title="Permalink to this headline">¶</a></h3>
+<h3>Exception vs Boolean <a class="reference internal" href="#cd001" id="id1"><span>[CD001]</span></a><a class="headerlink" href="#exception-vs-boolean-cd001" title="Permalink to this headline">¶</a></h3>
 <p>Exceptions are generally the way to go for things where failure is not expected as an option. Boolean return values are the way to go for things where failure might be an expected result sometimes.</p>
 </div>
 </div>
 <div class="section" id="java">
 <h2>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="single-abstract-method-interface-sam-cd002">
-<h3>Single Abstract Method Interface (SAM) <a class="reference internal" href="#cd002" id="id2">[CD002]</a><a class="headerlink" href="#single-abstract-method-interface-sam-cd002" title="Permalink to this headline">¶</a></h3>
-<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">SamInteraceExample</span>  <span class="p">{</span>
-     <span class="n">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="n">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>  <span class="p">{</span>
-         <span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">using</span> <span class="n">anonymous</span> <span class="k">class</span>
-         <span class="nc">new</span> <span class="n">Thread</span><span class="p">(</span><span class="n">new</span> <span class="n">Runnable</span><span class="p">()</span>   <span class="p">{</span>
+<h3>Single Abstract Method Interface (SAM) <a class="reference internal" href="#cd002" id="id2"><span>[CD002]</span></a><a class="headerlink" href="#single-abstract-method-interface-sam-cd002" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SamInteraceExample</span>  <span class="p">{</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>  <span class="p">{</span>
+         <span class="c1">// This is using anonymous class</span>
+         <span class="k">new</span> <span class="n">Thread</span><span class="p">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="p">()</span>   <span class="p">{</span>
              <span class="nd">@Override</span>
-             <span class="n">public</span> <span class="n">void</span> <span class="n">run</span><span class="p">()</span>   <span class="p">{</span>
-                 <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Running using anonymous classes&quot;</span><span class="p">);</span>
+             <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span>   <span class="p">{</span>
+                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Running using anonymous classes&quot;</span><span class="p">);</span>
              <span class="p">}</span>
-         <span class="p">})</span><span class="o">.</span><span class="n">start</span><span class="p">();</span>
+         <span class="p">}).</span><span class="na">start</span><span class="p">();</span>
 
-         <span class="o">//</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">using</span> <span class="k">lambda</span> <span class="n">expression</span>
-         <span class="n">new</span> <span class="n">Thread</span><span class="p">(</span>
-             <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="n">out</span><span class="o">.</span><span class="n">println</span><span class="p">(</span><span class="s2">&quot;Running using lambda expression&quot;</span><span class="p">)</span>
-         <span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">();</span>
+         <span class="c1">// This is using lambda expression</span>
+         <span class="k">new</span> <span class="n">Thread</span><span class="p">(</span>
+             <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Running using lambda expression&quot;</span><span class="p">)</span>
+         <span class="p">).</span><span class="na">start</span><span class="p">();</span>
      <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -442,18 +442,14 @@
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils citation" frame="void" id="cd001" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[CD001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw">https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw</a></td></tr>
-</tbody>
-</table>
-<table class="docutils citation" frame="void" id="cd002" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[CD002]</a></td><td><a class="reference external" href="https://dzone.com/articles/introduction-functional-1">https://dzone.com/articles/introduction-functional-1</a></td></tr>
-</tbody>
-</table>
+<dl class="citation">
+<dt class="label" id="cd001"><span class="brackets"><a class="fn-backref" href="#id1">CD001</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw">https://stackoverflow.com/questions/2972307/when-to-return-bool-throw-an-exception-and-which-exception-to-throw</a></p>
+</dd>
+<dt class="label" id="cd002"><span class="brackets"><a class="fn-backref" href="#id2">CD002</a></span></dt>
+<dd><p><a class="reference external" href="https://dzone.com/articles/introduction-functional-1">https://dzone.com/articles/introduction-functional-1</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -509,6 +505,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

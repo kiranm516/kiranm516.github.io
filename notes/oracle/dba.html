@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -413,15 +413,15 @@
 <h1>DBA<a class="headerlink" href="#dba" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="ezconnect-syntax">
 <h2>EZConnect Syntax<a class="headerlink" href="#ezconnect-syntax" title="Permalink to this headline">¶</a></h2>
-<div class="code sql highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CONN</span><span class="p">[</span><span class="n">ECT</span><span class="p">]</span> <span class="n">username</span><span class="o">/</span><span class="n">password</span><span class="o">@</span><span class="p">[</span><span class="o">//</span><span class="p">]</span><span class="n">host</span><span class="p">[:</span><span class="n">port</span><span class="p">][</span><span class="o">/</span><span class="n">service_name</span><span class="p">]</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">CONN</span><span class="p">[</span><span class="n">ECT</span><span class="p">]</span> <span class="n">username</span><span class="o">/</span><span class="n">password</span><span class="o">@</span><span class="p">[</span><span class="o">//</span><span class="p">]</span><span class="k">host</span><span class="p">[:</span><span class="n">port</span><span class="p">][</span><span class="o">/</span><span class="n">service_name</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Where:</p>
 <ul class="simple">
-<li>//            - Optional. Specify // for URL</li>
-<li>host          - Required. Specify the host name or IP address of the database server computer. The host name is domain-qualified if the local operating system configuration specifies a domain.</li>
-<li>port          - Optional. Specify the listening port. The default is 1521.</li>
-<li>service_name  - Optional. Specify the service name of the database. The default is the host of the database server computer. Note that this might not be the same value that you entered in the connect string for the host. For example, for the host emp, the service name might be emp.acme.com.</li>
+<li><p>//            - Optional. Specify // for URL</p></li>
+<li><p>host          - Required. Specify the host name or IP address of the database server computer. The host name is domain-qualified if the local operating system configuration specifies a domain.</p></li>
+<li><p>port          - Optional. Specify the listening port. The default is 1521.</p></li>
+<li><p>service_name  - Optional. Specify the service name of the database. The default is the host of the database server computer. Note that this might not be the same value that you entered in the connect string for the host. For example, for the host emp, the service name might be emp.acme.com.</p></li>
 </ul>
 <p>If the host does not match the database service name, then enter a valid service name value rather than accepting the default.</p>
 <div class="section" id="notes">
@@ -490,6 +490,7 @@
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -410,31 +410,31 @@
   <div class="section" id="docker">
 <h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="space-usage-001">
-<h2>Space Usage <a class="footnote-reference" href="#id5" id="id1">[001]</a><a class="headerlink" href="#space-usage-001" title="Permalink to this headline">¶</a></h2>
-<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">system</span> <span class="n">df</span>
+<h2>Space Usage <a class="footnote-reference brackets" href="#id5" id="id1">001</a><a class="headerlink" href="#space-usage-001" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span>docker system df
 </pre></div>
 </div>
 </div>
 <div class="section" id="save-docker-image-002">
-<h2>Save docker image <a class="footnote-reference" href="#id6" id="id2">[002]</a><a class="headerlink" href="#save-docker-image-002" title="Permalink to this headline">¶</a></h2>
-<div class="code batch highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># pull the image</span>
-<span class="n">docker</span> <span class="n">pull</span> <span class="n">ubuntu</span>
+<h2>Save docker image <a class="footnote-reference brackets" href="#id6" id="id2">002</a><a class="headerlink" href="#save-docker-image-002" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-batch notranslate"><div class="highlight"><pre><span></span># pull the image
+docker pull ubuntu
 
-<span class="c1"># save the image to a file</span>
-<span class="n">docker</span> <span class="n">save</span> <span class="o">-</span><span class="n">o</span> <span class="n">ubuntu_image</span><span class="o">.</span><span class="n">docker</span> <span class="n">ubuntu</span>
+# save the image to a file
+docker save -o ubuntu_image.docker ubuntu
 
-<span class="c1"># load the image from file</span>
-<span class="n">docker</span> <span class="n">load</span> <span class="n">ubuntu_image</span><span class="o">.</span><span class="n">docker</span>
+# load the image from file
+docker load ubuntu_image.docker
 </pre></div>
 </div>
 </div>
 <div class="section" id="change-vhd-location-003">
-<h2>Change VHD location <a class="footnote-reference" href="#id7" id="id3">[003]</a><a class="headerlink" href="#change-vhd-location-003" title="Permalink to this headline">¶</a></h2>
+<h2>Change VHD location <a class="footnote-reference brackets" href="#id7" id="id3">003</a><a class="headerlink" href="#change-vhd-location-003" title="Permalink to this headline">¶</a></h2>
 <p>Docker | Settings | Advanced | Change VHD Location</p>
 <p>Note: The selected directory should be empty. Docker will move the image</p>
 </div>
 <div class="section" id="start-bash-from-running-container-004">
-<h2>Start bash from running container <a class="footnote-reference" href="#id8" id="id4">[004]</a><a class="headerlink" href="#start-bash-from-running-container-004" title="Permalink to this headline">¶</a></h2>
+<h2>Start bash from running container <a class="footnote-reference brackets" href="#id8" id="id4">004</a><a class="headerlink" href="#start-bash-from-running-container-004" title="Permalink to this headline">¶</a></h2>
 <p>docker exec [OPTIONS] CONTAINER COMMAND [ARG…] [flags]</p>
 <p>e.g., docker exec -it oracle /bin/bash</p>
 <p>-i - Interactive
@@ -446,30 +446,22 @@ oracle - Container name
 <h2>Commit<a class="headerlink" href="#commit" title="Permalink to this headline">¶</a></h2>
 <p>Usage:  docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</p>
 <p>Create a new image from a container’s changes</p>
-<dl class="docutils">
-<dt>Options:</dt>
-<dd><table class="first last docutils option-list" frame="void" rules="none">
-<col class="option" />
-<col class="description" />
-<tbody valign="top">
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-a</span>, <span class="option">--author <var>string</var></span></kbd></td>
-</tr>
-<tr><td>&#160;</td><td>Author (e.g., “John Hannibal Smith
-&lt;<a class="reference external" href="mailto:hannibal&#37;&#52;&#48;a-team&#46;com">hannibal<span>&#64;</span>a-team<span>&#46;</span>com</a>&gt;”)</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-c</span>, <span class="option">--change <var>list</var></span></kbd></td>
-</tr>
-<tr><td>&#160;</td><td>Apply Dockerfile instruction to the created image</td></tr>
-<tr><td class="option-group" colspan="2">
-<kbd><span class="option">-m</span>, <span class="option">--message <var>string</var></span></kbd></td>
-</tr>
-<tr><td>&#160;</td><td>Commit message</td></tr>
-<tr><td class="option-group">
-<kbd><span class="option">-p</span>, <span class="option">--pause</span></kbd></td>
-<td>Pause container during commit (default true)</td></tr>
-</tbody>
-</table>
+<dl>
+<dt>Options:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-a</span>, <span class="option">--author <var>string</var></span></kbd></dt>
+<dd><p>Author (e.g., “John Hannibal Smith
+&lt;<a class="reference external" href="mailto:hannibal&#37;&#52;&#48;a-team&#46;com">hannibal<span>&#64;</span>a-team<span>&#46;</span>com</a>&gt;”)</p>
+</dd>
+<dt><kbd><span class="option">-c</span>, <span class="option">--change <var>list</var></span></kbd></dt>
+<dd><p>Apply Dockerfile instruction to the created image</p>
+</dd>
+<dt><kbd><span class="option">-m</span>, <span class="option">--message <var>string</var></span></kbd></dt>
+<dd><p>Commit message</p>
+</dd>
+<dt><kbd><span class="option">-p</span>, <span class="option">--pause</span></kbd></dt>
+<dd><p>Pause container during commit (default true)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </div>
@@ -478,30 +470,20 @@ oracle - Container name
 <p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes">https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes</a>
 <a class="reference external" href="https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker">https://stackoverflow.com/questions/17665283/how-does-one-remove-an-image-in-docker</a>
 <a class="reference external" href="https://store.docker.com/profiles/kiranm516/content/sub-e2395a92-3d01-49bd-b79d-7ec6713c0113">https://store.docker.com/profiles/kiranm516/content/sub-e2395a92-3d01-49bd-b79d-7ec6713c0113</a></p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[001]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/26753087/docker-how-to-analyze-a-containers-disk-usage">https://stackoverflow.com/questions/26753087/docker-how-to-analyze-a-containers-disk-usage</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[002]</a></td><td><a class="reference external" href="https://serverfault.com/questions/701248/downloading-docker-image-for-transfer-to-non-internet-connected-machine">https://serverfault.com/questions/701248/downloading-docker-image-for-transfer-to-non-internet-connected-machine</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[003]</a></td><td><a class="reference external" href="https://stackoverflow.com/questions/42369522/docker-wont-change-vhd-location?rq=1">https://stackoverflow.com/questions/42369522/docker-wont-change-vhd-location?rq=1</a></td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[004]</a></td><td><a class="reference external" href="https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/">https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/</a></td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id1">001</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/26753087/docker-how-to-analyze-a-containers-disk-usage">https://stackoverflow.com/questions/26753087/docker-how-to-analyze-a-containers-disk-usage</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">002</a></span></dt>
+<dd><p><a class="reference external" href="https://serverfault.com/questions/701248/downloading-docker-image-for-transfer-to-non-internet-connected-machine">https://serverfault.com/questions/701248/downloading-docker-image-for-transfer-to-non-internet-connected-machine</a></p>
+</dd>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">003</a></span></dt>
+<dd><p><a class="reference external" href="https://stackoverflow.com/questions/42369522/docker-wont-change-vhd-location?rq=1">https://stackoverflow.com/questions/42369522/docker-wont-change-vhd-location?rq=1</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id4">004</a></span></dt>
+<dd><p><a class="reference external" href="https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/">https://blog.codeship.com/using-docker-commit-to-create-and-change-an-image/</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -557,6 +539,7 @@ oracle - Container name
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 

@@ -110,11 +110,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../code-design/index.html">Code Design</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#generic">Generic</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <code class="docutils literal notranslate"><span class="pre">[CD001]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#exception-vs-boolean-cd001">Exception vs Boolean <span>[CD001]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#java">Java</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <code class="docutils literal notranslate"><span class="pre">[CD002]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../code-design/index.html#single-abstract-method-interface-sam-cd002">Single Abstract Method Interface (SAM) <span>[CD002]</span></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../code-design/index.html#references">References</a></li>
@@ -414,18 +414,18 @@
 <div class="section" id="abstraction">
 <h2>Abstraction<a class="headerlink" href="#abstraction" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>There need to be a balance of how much abstraction required</li>
+<li><p>There need to be a balance of how much abstraction required</p></li>
 </ul>
 <p>Task: Make a couse video</p>
 <p>Usuall steps:</p>
 <ol class="arabic simple">
-<li>Choose a topic</li>
-<li>Develop some material</li>
-<li>Go to studio</li>
-<li>Record</li>
-<li>Reshoot if any changes</li>
-<li>Post-production</li>
-<li>Upload/Post video</li>
+<li><p>Choose a topic</p></li>
+<li><p>Develop some material</p></li>
+<li><p>Go to studio</p></li>
+<li><p>Record</p></li>
+<li><p>Reshoot if any changes</p></li>
+<li><p>Post-production</p></li>
+<li><p>Upload/Post video</p></li>
 </ol>
 <p>A professor is concerned with steps 1-5
 Studio is concerned with steps 3-5
@@ -441,31 +441,31 @@ Producer is concerned with 3-7</p>
 <div class="section" id="high-level-api-design">
 <h2>High Level API Design<a class="headerlink" href="#high-level-api-design" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Maximise their utility</li>
-<li>Minimize technical debt</li>
-<li>It is an iterative process</li>
+<li><p>Maximise their utility</p></li>
+<li><p>Minimize technical debt</p></li>
+<li><p>It is an iterative process</p></li>
 </ul>
 <p><strong>4 design principles</strong></p>
 <ol class="arabic simple">
-<li>Do on thing and do it well</li>
-<li>Never expose internal implementation details (Information hiding)</li>
-<li>Small as possible</li>
-<li>Usability</li>
+<li><p>Do on thing and do it well</p></li>
+<li><p>Never expose internal implementation details (Information hiding)</p></li>
+<li><p>Small as possible</p></li>
+<li><p>Usability</p></li>
 </ol>
 </div>
 <div class="section" id="low-level-api-desing">
 <h2>Low level API desing<a class="headerlink" href="#low-level-api-desing" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Avoid long parameter list</li>
-<li>Return descriptive objects
-* Instead of returning primitives return an object</li>
-<li>Avoid exceptional returns
-* Instead of returning null return empty list</li>
-<li>Handle exceptional circumstances
+<li><p>Avoid long parameter list</p></li>
+<li><p>Return descriptive objects
+* Instead of returning primitives return an object</p></li>
+<li><p>Avoid exceptional returns
+* Instead of returning null return empty list</p></li>
+<li><p>Handle exceptional circumstances
 * Try to give a descriptive error message while throwing exceptions. Can include link for more info regarding the exception/error
-* It should be understandable without giving implementation details</li>
-<li>Favour immutability</li>
-<li>Favour private classes, fields &amp; methods</li>
+* It should be understandable without giving implementation details</p></li>
+<li><p>Favour immutability</p></li>
+<li><p>Favour private classes, fields &amp; methods</p></li>
 </ul>
 </div>
 <div class="section" id="api-design-process">
@@ -482,21 +482,21 @@ Producer is concerned with 3-7</p>
 * Help us understand how user use API
 * Can give insight into error handling, boiler plate code and any other improvements</p>
 <ol class="arabic simple" start="4">
-<li>Document the API
-* Include examples for users</li>
+<li><p>Document the API
+* Include examples for users</p></li>
 </ol>
 </div>
 <div class="section" id="api-usability">
 <h2>API usability<a class="headerlink" href="#api-usability" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>How easy for usage</li>
-<li>Naming, actions, protocols</li>
-<li>Easy to use correctly, hard to use incorrectly</li>
+<li><p>How easy for usage</p></li>
+<li><p>Naming, actions, protocols</p></li>
+<li><p>Easy to use correctly, hard to use incorrectly</p></li>
 </ul>
 <ol class="arabic simple">
-<li>Visibility
+<li><p>Visibility
 * Easy to look and understand
-* Prioritize what are the important parts of the API</li>
+* Prioritize what are the important parts of the API</p></li>
 </ol>
 <p>e.g.,
 Sorting method within an online store
@@ -510,38 +510,38 @@ items.sort(‘clearance’);</p>
 items.sort(Filter.CLEARANCE);</p>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li>Model
+<li><p>Model
 * Can give proper abstraction for model
-* Matching their view of the domain model with the API model</li>
+* Matching their view of the domain model with the API model</p></li>
 </ol>
 <p>e.g.,
 Online store</p>
-<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">get</span> <span class="n">doesn</span><span class="s1">&#39;t make sense</span>
-<span class="n">store</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// get doesn&#39;t make sense</span>
+<span class="n">store</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
 
- <span class="o">//</span> <span class="n">provide</span> <span class="n">a</span> <span class="n">descriptive</span> <span class="n">name</span>
- <span class="n">store</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">);</span>
+ <span class="c1">// provide a descriptive name</span>
+ <span class="n">store</span><span class="p">.</span><span class="na">getProduct</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">);</span>
 
- <span class="o">//</span> <span class="n">Need</span> <span class="n">to</span> <span class="n">think</span> <span class="n">the</span> <span class="n">amount</span> <span class="n">of</span> <span class="n">abstraction</span> <span class="n">can</span> <span class="n">be</span> <span class="n">provided</span>
- <span class="o">//</span> <span class="n">user</span> <span class="n">might</span> <span class="ow">not</span> <span class="n">care</span> <span class="n">about</span> <span class="n">departements</span> <span class="ow">or</span> <span class="n">shelf</span><span class="s1">&#39;s</span>
- <span class="o">//</span> <span class="n">only</span> <span class="n">requires</span> <span class="n">products</span>
- <span class="n">store</span><span class="o">.</span><span class="n">getDept</span><span class="p">(</span><span class="n">deptId</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span><span class="o">.</span><span class="n">getShelf</span><span class="p">(</span><span class="n">shelfID</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="n">productID</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
+ <span class="c1">// Need to think the amount of abstraction can be provided</span>
+ <span class="c1">// user might not care about departements or shelf&#39;s</span>
+ <span class="c1">// only requires products</span>
+ <span class="n">store</span><span class="p">.</span><span class="na">getDept</span><span class="p">(</span><span class="n">deptId</span><span class="p">:</span> <span class="n">String</span><span class="p">).</span><span class="na">getShelf</span><span class="p">(</span><span class="n">shelfID</span><span class="p">:</span> <span class="n">String</span><span class="p">).</span><span class="na">getProduct</span><span class="p">(</span><span class="n">productID</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li>Mapping
-* Related to mental model</li>
+<li><p>Mapping
+* Related to mental model</p></li>
 </ol>
-<div class="code java highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">No</span> <span class="n">proper</span> <span class="nb">type</span> <span class="n">declaration</span>
-<span class="n">store</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">String</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// No proper type declaration</span>
+<span class="n">store</span><span class="p">.</span><span class="na">getProduct</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">String</span>
 
-<span class="o">//</span> <span class="n">provide</span> <span class="n">more</span> <span class="n">detail</span>
-<span class="n">store</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Product</span>
+<span class="c1">// provide more detail</span>
+<span class="n">store</span><span class="p">.</span><span class="na">getProduct</span><span class="p">(</span><span class="n">productId</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">Product</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li>Feedback
-* Constant and early feedback as fast as possible</li>
+<li><p>Feedback
+* Constant and early feedback as fast as possible</p></li>
 </ol>
 <p>e.g.,
 .. code:: java</p>
@@ -617,6 +617,7 @@ items.sort(‘clearamce’);</p>
       <script type="text/javascript" src="../_static/jquery.js"></script>
       <script type="text/javascript" src="../_static/underscore.js"></script>
       <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
 
   
 
