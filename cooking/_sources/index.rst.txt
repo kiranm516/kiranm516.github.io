@@ -6,6 +6,7 @@ My Cooking Notes
    :maxdepth: 1
 
    rice-varities/index.rst
+   greens/index.rst
 
 
 Reference Site
